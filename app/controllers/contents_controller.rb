@@ -1,4 +1,4 @@
-class ContentsController < ApplicationRecord
+class ContentsController < ApplicationController
 
     def index
         puts "hello from contents"

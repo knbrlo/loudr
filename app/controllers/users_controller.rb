@@ -14,10 +14,10 @@ class UsersController < ApplicationController
         if @new_user.save
             
             # save the user id in the session so it can be access anywhere that's needed
-            sessions[:user_id] = @new_user.id
+            session[:user_id] = @new_user.id
 
-            # send the user to the path for our primary object (yet to define yet.)
-            
+            # send the user to the path for our primary object 
+            redirect_to contents_path
         else
             # send the user back to thew new page to create a new user
             # also this helps us display flash messages and makes so we don't

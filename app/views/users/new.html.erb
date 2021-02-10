@@ -8,6 +8,7 @@
     <%= f.label :email %>
     <%= f.email_field :email %>
 
+    <!-- Make sure we don't use a password_digest here because it'll save the raw text password to the DB which is very bad -->
     <%= f.label :password %>
     <%= f.password_field :password %>
 

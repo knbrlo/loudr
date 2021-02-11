@@ -20,8 +20,6 @@ class UsersController < ApplicationController
             redirect_to home_path
         else
             # send the user back to thew new page to create a new user
-            # also this helps us display flash messages and makes so we don't
-            # keep any saved information around such as username / email / password
             render :new
         end
     end

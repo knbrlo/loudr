@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_211347) do
+ActiveRecord::Schema.define(version: 2021_02_11_212658) do
+
+  create_table "albums", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "release_date"
+    t.integer "creator_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["creator_id"], name: "index_albums_on_creator_id"
+    t.index ["user_id"], name: "index_albums_on_user_id"
+  end
 
   create_table "creators", force: :cascade do |t|
     t.string "username"
@@ -25,6 +37,18 @@ ActiveRecord::Schema.define(version: 2021_02_11_211347) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_recents_on_user_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "name"
+    t.string "duration"
+    t.integer "song_number"
+    t.boolean "explicit"
+    t.integer "play_count"
+    t.integer "album_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["album_id"], name: "index_songs_on_album_id"
   end
 
   create_table "users", force: :cascade do |t|

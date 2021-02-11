@@ -1,0 +1,20 @@
+<h1>Create New Album</h1>
+
+<%= form_for(@album) do |f| %>
+
+    <%= render partial: 'layouts/errors', locals: {object: @album} %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <!-- TODO - Ability to select from categories or create a new one-->
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+
+    <!-- TODO - Date picker field? -->
+    <%= f.label :release_date %>
+    <%= f.text_field :release_date %>
+
+    <%= f.submit "Create Album" %>
+
+<% end %>

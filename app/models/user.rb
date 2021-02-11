@@ -1,9 +1,11 @@
 class User < ApplicationRecord
 
-    # this is taking care of password validations
-    has_secure_password
+    # relationships
+    has_many :albums
+    has_many :creators, through: :albums
 
-    # more validations for user attributes
+    # validations and macros
+    has_secure_password
     validates :username, :email, presence: true
     validates :username, :email, uniqueness: true
 

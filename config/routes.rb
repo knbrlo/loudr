@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   # root
   root 'sessions#home'
   
@@ -29,11 +30,10 @@ Rails.application.routes.draw do
   # TODO - come back and make sure to remove any routes that you're not using.
   resources :creators
 
-  # contents
-  # TODO - come back and make sure to remove any routes that you're not using.
-  resources :contents
 
-  
+  # recents
+  # TODO - come back and make sure to remove any routes that you're not using.
+  resources :recents
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

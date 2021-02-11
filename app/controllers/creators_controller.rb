@@ -27,6 +27,12 @@ class CreatorsController < ApplicationController
     end
 
     def home
+        # make sure the creator id is valid and available
+        # make sure there are albums in the returned results
+        if session[:creator_id] && albums = Album.where(creator_id: session[:creator_id])
+            @all_albums = albums
+        else
+        end
     end
 
     private

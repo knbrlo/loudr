@@ -2,3 +2,13 @@
 
 <!-- TODO - Always check the user type on pages like this so they can't hack into it.-->
 <%= link_to "Create New Album", new_album_path %>
+
+<h2>My Albums</h2>
+<% @all_albums.each do |album| %>
+    <li>
+        Album Name: <%= album.name %>
+        Category: <%= album.category %>
+        Release Date: <%= album.release_date %>
+    </li>
+<% end %>
+

@@ -17,7 +17,7 @@ class UsersController < ApplicationController
             session[:user_id] = @new_user.id
 
             # send the user to the path for our primary object 
-            redirect_to user_home_path
+            redirect_to home_path
         else
             # send the user back to thew new page to create a new user
             # also this helps us display flash messages and makes so we don't

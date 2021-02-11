@@ -3,15 +3,26 @@ class SessionsController < ApplicationController
     def home
     end
 
+    def new
+        @user = User.new
+        render :login
+    end
+
     def create
     end
 
-    def new
+    def newcreator
+        @creator = Creator.new
+        render :logincreator
     end
+
+    def createcreator
+    end
+
 
     # logout - user
     # todo - these are setup as different paths for user and creator so we can take different actions for each.
-    def destroyuser
+    def destroy
         session.clear
         redirect_to '/'
     end

@@ -15,11 +15,11 @@
     <div id="nav-main">
         <% if logged_in_user? %>
           <!-- TODO Link to home, link to creators list, link to favorites, link to following, link to playlists -->
-          <%= link_to 'Log Out', user_logout_path, method: :delete, class: 'nav-item'%>
+          <%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-item'%>
         <% end%>
         <% if logged_in_creator? %>
           <!-- TODO Link to home, link to create new, link to my content, link to all creators, link to clips -->
-          <%= link_to 'Log Out', user_logout_path, method: :delete, class: 'nav-item'%>
+          <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'nav-item'%>
         <% end%>
     </div>
 

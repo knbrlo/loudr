@@ -17,7 +17,7 @@ class CreatorsController < ApplicationController
             session[:creator_id] = @new_creator.id
 
             # send the user to the path for our creator home page
-            redirect_to creator_home_path
+            redirect_to home_creator_path
         else
             # send the user back to thew new page to create a new creator
             # also this helps us display flash messages and makes so we don't

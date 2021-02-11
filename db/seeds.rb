@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Creator.create(username: 'Creator 123', email: 'creator123@gmail.com', password: '123')
+Creator.create(username: 'creator123', email: 'creator123@gmail.com', password: '123')
 
 
 albums = Album.create([{name: 'Album 1', category: 'Rock', release_date: 'Release Date 1', creator_id: 1}])

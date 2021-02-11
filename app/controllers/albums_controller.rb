@@ -11,15 +11,16 @@ class AlbumsController < ApplicationController
         # if the album is successfully saved then proceed and redirect to the next page
         if @new_album.save
             
-            # send the user to the path for all of their albums
-            redirect_to home_creator_path
+            # send the user to the album detail page where they can add songs
+            redirect_to album_path(@new_album)
         else
             # send the user back to the new album page
-            puts "log 1"
             render :new
-            
-            puts album_params
         end
+    end
+
+    def show
+        @album = Album.find_by_id(params[:id])
     end
     
 

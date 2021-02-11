@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
+  # home - user
+  get '/user-home' => 'users#home' 
+
+  # home - creator
+  get '/creator-home' => 'creators#home' 
+
   # TODO - come back and make sure to remove any routes that you're not using.
   resources :users
 

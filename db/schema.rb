@@ -17,11 +17,9 @@ ActiveRecord::Schema.define(version: 2021_02_11_212658) do
     t.string "category"
     t.string "release_date"
     t.integer "creator_id"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["creator_id"], name: "index_albums_on_creator_id"
-    t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
   create_table "creators", force: :cascade do |t|

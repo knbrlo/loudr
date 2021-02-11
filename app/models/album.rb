@@ -2,8 +2,7 @@ class Album < ApplicationRecord
 
     # relationships
     belongs_to :creator
-    belongs_to :user, optional: true
-
+    has_many :users
     has_many :songs
 
     # validations

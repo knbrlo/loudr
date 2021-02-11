@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_153136) do
-
-  create_table "contents", force: :cascade do |t|
-    t.string "content_category"
-    t.string "content_type"
-    t.string "content_name"
-    t.string "content_duration"
-    t.integer "content_order"
-    t.boolean "content_explicit"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2021_02_11_211347) do
 
   create_table "creators", force: :cascade do |t|
     t.string "username"
@@ -29,6 +18,13 @@ ActiveRecord::Schema.define(version: 2021_02_11_153136) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recents", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_recents_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

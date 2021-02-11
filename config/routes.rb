@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   # root
   root 'sessions#home'
   
@@ -30,6 +29,9 @@ Rails.application.routes.draw do
   # TODO - come back and make sure to remove any routes that you're not using.
   resources :creators
 
+  
+  # TODO - come back and make sure to remove any routes that you're not using.
+  resources :albums
 
   # recents
   # TODO - come back and make sure to remove any routes that you're not using.

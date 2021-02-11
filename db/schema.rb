@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_10_221433) do
+ActiveRecord::Schema.define(version: 2021_02_11_153136) do
 
   create_table "contents", force: :cascade do |t|
     t.string "content_category"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2021_02_10_221433) do
     t.string "content_duration"
     t.integer "content_order"
     t.boolean "content_explicit"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "creators", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

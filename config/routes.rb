@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # sign up
   get '/signup' => 'users#new' 
+  get '/signup-creator' => 'creators#new' 
 
   # login
   get '/login' => 'sessions#new'
@@ -15,6 +16,9 @@ Rails.application.routes.draw do
 
   # TODO - come back and make sure to remove any routes that you're not using.
   resources :contents
+
+  # TODO - come back and make sure to remove any routes that you're not using.
+  resources :creators
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

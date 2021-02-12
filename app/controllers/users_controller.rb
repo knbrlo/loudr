@@ -25,6 +25,14 @@ class UsersController < ApplicationController
     end
 
     def home
+        # get all the released content 
+        # albums
+        # singles
+        # podcasts
+
+        @released_albums = Album.where(released: true)
+
+        p @released_albums
     end
 
     private

@@ -1,1 +1,18 @@
 <h1>Logged In - User Home Page</h1>
+
+<div id="new-releases">
+    <div id="albums">
+        <h2>Albums</h2>
+        <% @released_albums.each do |album| %>
+            <h3>Album Name: <%= album.name %></h3>
+            <ul>
+                <li>Category: <%= album.category %></li>
+                <li>Released: <%= album.released %></li>
+                <li>Release Date: <%= album.release_date %></li>
+                <li><%= link_to 'Album Show Page', album_path(album)%></li>
+            </ul>
+            <br>
+            <br>
+        <% end %>
+    </div>
+</div>

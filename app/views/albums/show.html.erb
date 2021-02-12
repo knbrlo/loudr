@@ -12,10 +12,9 @@
     <% @album.songs.each do |song|%>
         <li><%= song.name %></li>
     <% end %>
-    
 </ul>
 
-
-<%= link_to 'Add Song to Album', new_album_song_path(@album) %>
-
+<% if logged_in_creator? %>
+    <%= link_to 'Add Song to Album', new_album_song_path(@album) %>
+<% end %>
 

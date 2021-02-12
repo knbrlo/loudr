@@ -1,4 +1,10 @@
 <h1>Album Show Page</h1>
 
-<% p 'the album is' %>
-<% p @album %>
+<ul>
+    <li>Album Name: <%= @album.name %></li>
+    <li>Category: <%= @album.category %></li>
+    <li>Release Date: <%= @album.release_date %></li>
+</ul>
+
+<%= link_to 'Add Song to Album', new_album_song_path(@album) %>
+

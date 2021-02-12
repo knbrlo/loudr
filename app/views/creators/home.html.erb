@@ -4,14 +4,16 @@
 <%= link_to "Create New Album", new_album_path %>
 
 <h2>My Albums</h2>
-<ul>
+<div>
 <% @all_albums.each do |album| %>
-    <li>
-        Album Name: <%= album.name %>
-        Category: <%= album.category %>
-        Release Date: <%= album.release_date %>
-        <%= link_to 'Album Show Page', album_path(album)%>
-    </li>
+    <h3>Album Name: <%= album.name %></h3>
+    <ul>
+        <li>Category: <%= album.category %></li>
+        <li>Release Date: <%= album.release_date %></li>
+        <li><%= link_to 'Album Show Page', album_path(album)%></li>
+    </ul>
+    <br>
+    <br>
 <% end %>
-</ul>
+</div>
 

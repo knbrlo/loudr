@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_212658) do
     t.string "name"
     t.string "category"
     t.string "release_date"
+    t.boolean "released"
     t.integer "creator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

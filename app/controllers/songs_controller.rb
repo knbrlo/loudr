@@ -1,5 +1,10 @@
 class SongsController < ApplicationController
 
+    def index
+        # todo - if the route contains an album, then follow this path
+        @album = Album.find_by_id(params[:album_id])
+    end
+
     def new
         @song = Song.new(album_id: params[:album_id])
 

@@ -1,4 +1,4 @@
-<h1>Album Show Page</h1>
+<h1>Song Index Page</h1>
 
 <!-- DRY FIX NEEDED -->
 <ul>
@@ -15,7 +15,4 @@
     <% end %>
 </ul>
 
-<% if logged_in_creator? %>
-    <%= link_to 'Add Song to Album', new_album_song_path(@album) %>
-<% end %>
-
+<!-- TODO: Link back to the album page -->

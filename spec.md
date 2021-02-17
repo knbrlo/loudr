@@ -1,7 +1,5 @@
 # spec
 
-- [ ] Explain on each point how the requirement has been met.
-
 - [x] Use the Ruby on Rails framework.
     - Used rails to create the app.
 
@@ -16,8 +14,11 @@
     - A user has_many :creators, through: :albums
     - A creator has_many :users, through: :albums
 
-- [ ] Include a many-to-many relationship implemented with has_many :through associations. The join table must include a user-submittable attribute — that is to say, some attribute other than its foreign keys that can be submitted by the app's user
+- [x] Include a many-to-many relationship implemented with has_many :through associations. The join table must include a user-submittable attribute — that is to say, some attribute other than its foreign keys that can be submitted by the app's user
+    - This is covered with the albums table where I've got two has_many through relationships with users and creators.
+
 - [ ] Your models must include reasonable validations for the simple attributes. You don't need to add every possible validation or duplicates, such as presence and a minimum length, but the models should defend against invalid data.
+
 - [ ] You must include at least one class level ActiveRecord scope method. a. Your scope method must be chainable, meaning that you must use ActiveRecord Query methods within it (such as .where and .order) rather than native ruby methods (such as #find_all or #sort).
 
 - [x] Your application must provide standard user authentication, including signup, login, logout, and passwords.
@@ -31,12 +32,23 @@
     - This is covered with the use of albums that have a nested songs resource where they can see a new form, create a new song and then be taken back to the album page to see all the songs for that album.
 
 
-- [ ] You must include a nested new route with form that relates to the parent resource.
-- [ ] You must include a nested index or show route.
+- [x] You must include a nested new route with form that relates to the parent resource.
+    - This is covered with being able to create an album, then on that album page being able to create a song for that album where the song form is nested within the album form after an album has been created (also it's late when I wrote that so hopefully it makes sense.)
+
+- [x] You must include a nested index or show route.
+    - This is covered with an album and song index page within that album url.
+    ```
+    http://127.0.0.1:3000/albums/1/songs
+    ```
+
 - [ ] Your forms should correctly display validation errors.
+
 - [ ] Your fields should be enclosed within a fields_with_errors class
+
 - [ ] Error messages describing the validation failures must be present within the view.
+
 - [ ] Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app.
+
 - [ ] Logic present in your controllers should be encapsulated as methods in your models.
 
 - [x] Your views should use helper methods and partials when appropriate.
@@ -53,6 +65,7 @@
 
 
 Final Steps:
+- [ ] Update the readme.md to include running instructions.
 - [ ] Submit a video of how a user would interact with your working web application.
 - [ ] Write a blog post about the project and process.
 - [ ] When done, submit your GitHub repo's url, a link to your video demo, and a link to your blog post in the corresponding text boxes in the right rail. Hit "I'm done" to wrap it up.

@@ -56,8 +56,8 @@
 - [x] Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app.
     - This is complete with the use of error partial.
 
-- [ ] Logic present in your controllers should be encapsulated as methods in your models.
-    
+- [x] Logic present in your controllers should be encapsulated as methods in your models.
+    - Don't have any custom logic in the controllers that needs to be moved. 
 
 - [x] Your views should use helper methods and partials when appropriate.
     - I've got helper methods included in my application_helper.rb file to assist with standard login checks for users and creators.

@@ -1,7 +1,23 @@
 class AlbumsController < ApplicationController
 
+    def index
+        
+        if params[:category].present?
+        
+            @selected_category = params[:category].downcase!
+
+            # http://localhost:3000/albums?category=EDM
+            
+            if @selected_category == "edm"
+                @albums = Album.edm_music   
+            end
+        else
+            @albums = Album.all
+        end
+
+    end
+
     def new
-        puts "log 2"
         @album = Album.new
     end
 

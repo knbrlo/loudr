@@ -20,7 +20,7 @@
 - [x] Your models must include reasonable validations for the simple attributes. You don't need to add every possible validation or duplicates, such as presence and a minimum length, but the models should defend against invalid data.
     - This is covered under the max length for albums and songs.
 
-- [ ] You must include at least one class level ActiveRecord scope method. a. Your scope method must be chainable, meaning that you must use ActiveRecord Query methods within it (such as .where and .order) rather than native ruby methods (such as #find_all or #sort).
+- [x] You must include at least one class level ActiveRecord scope method. a. Your scope method must be chainable, meaning that you must use ActiveRecord Query methods within it (such as .where and .order) rather than native ruby methods (such as #find_all or #sort).
 
 - [x] Your application must provide standard user authentication, including signup, login, logout, and passwords.
     - This is covered as the users can sign up, login, logout and secure passwords are used.

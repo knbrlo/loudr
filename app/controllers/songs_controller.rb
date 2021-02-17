@@ -20,16 +20,18 @@ class SongsController < ApplicationController
         puts "album is:"
         puts @album
 
-        @new_song = @album.songs.build(song_params)
+        @song = @album.songs.build(song_params)
 
-        if @new_song.save
+        if @song.save
             p 'New song is '
-            p @new_song
+            p @song
 
             # todo - reroute back to the album show page and show all the songs for the album
             redirect_to album_path(@album)
         else
             p 'Didnt make new song'
+            # send the user back to the new song page
+            render :new
         end
         
     end

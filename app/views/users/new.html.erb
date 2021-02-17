@@ -3,6 +3,7 @@
 <!-- TODO - Handle Validation failed: Username has already been taken, Email has already been taken  and displaying the error here-->
 
 <%= form_for(@user) do |f| %>
+    <%= render partial: 'layouts/errors', locals: {object: @user} %>
 
     <%= f.label :username %>
     <%= f.text_field :username %>

@@ -41,14 +41,16 @@
     http://127.0.0.1:3000/albums/1/songs
     ```
 
-- [ ] Your forms should correctly display validation errors.
+- [x] Your forms should correctly display validation errors.
+    - Validation errors are displayed on the Album creation form.
+    - Validation errors are displayed on the Song creation form.
 
-- [ ] Your fields should be enclosed within a fields_with_errors class.
+
+- [x] Your fields should be enclosed within a fields_with_errors class.
+    - Looks like this is passing when  there are errors, then the "field_with_errors" surrounds the element.
 
 - [x] Error messages describing the validation failures must be present within the view.
     - This is completed with the sign up forms for creators and users, if the username or email has already been taken it'll display an error on the screen.
-
-
 
 - [ ] Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app.
 

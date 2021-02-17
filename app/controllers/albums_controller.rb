@@ -6,13 +6,13 @@ class AlbumsController < ApplicationController
     end
 
     def create
-        @new_album = current_creator.albums.build(album_params)
+        @album = current_creator.albums.build(album_params)
 
         # if the album is successfully saved then proceed and redirect to the next page
-        if @new_album.save
+        if @album.save
             
             # send the user to the album detail page where they can add songs
-            redirect_to album_path(@new_album)
+            redirect_to album_path(@album)
         else
             # send the user back to the new album page
             render :new

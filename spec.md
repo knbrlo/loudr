@@ -35,8 +35,14 @@
 - [ ] Logic present in your controllers should be encapsulated as methods in your models.
 - [ ] Your views should use helper methods and partials when appropriate.
 - [ ] Follow patterns in the Rails Style Guide and the Ruby Style Guide.
+
 - [x] Do not use scaffolding to build your project. Your goal here is to learn. Scaffold is a way to get up and running quickly, but learning a lot is not one of the benefits of scaffolding.
+    - This is covered as the only command that I've used are ones to create the app and ones to create models as I need them.
+
 - [ ] Record at least a 30 min coding session (I'll keep this on Dropbox if needed.)
+
+
+Final Steps:
 - [ ] Submit a video of how a user would interact with your working web application.
 - [ ] Write a blog post about the project and process.
 - [ ] When done, submit your GitHub repo's url, a link to your video demo, and a link to your blog post in the corresponding text boxes in the right rail. Hit "I'm done" to wrap it up.

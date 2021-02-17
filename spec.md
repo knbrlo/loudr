@@ -33,8 +33,13 @@
 - [ ] Error messages describing the validation failures must be present within the view.
 - [ ] Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app.
 - [ ] Logic present in your controllers should be encapsulated as methods in your models.
-- [ ] Your views should use helper methods and partials when appropriate.
+
+- [x] Your views should use helper methods and partials when appropriate.
+    - I've got helper methods included in my application_helper.rb file to assist with standard login checks for users and creators.
+    - I'm using partials for my errors and will be using them for my forms later on.
+
 - [ ] Follow patterns in the Rails Style Guide and the Ruby Style Guide.
+
 
 - [x] Do not use scaffolding to build your project. Your goal here is to learn. Scaffold is a way to get up and running quickly, but learning a lot is not one of the benefits of scaffolding.
     - This is covered as the only command that I've used are ones to create the app and ones to create models as I need them.

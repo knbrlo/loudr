@@ -1,10 +1,13 @@
 <h1>Welcome Home</h1>
 
 <div>
-<%= link_to "Sign Up", signup_path %>
+<%= link_to "User Sign Up", signup_path %>
 <br>
 <br>
-<%= link_to "Sign Up as Creator", signup_creator_path %>
+<%= link_to "User Log In", login_path %>
+<br>
+<br>
+<%= link_to "User Facebook Log In",  '/auth/facebook' %>
 </div>
 
 <br>
@@ -14,7 +17,7 @@ OR
 <br>
 
 <div>
-<%= link_to "User Log In", login_path %>
+<%= link_to "Creator Sign Up", signup_creator_path %>
 <br>
 <br>
 <%= link_to "Creator Log In", login_creator_path %>

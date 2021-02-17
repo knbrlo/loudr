@@ -62,7 +62,16 @@ class SessionsController < ApplicationController
     # facebook
     def fbcreate
         puts 'LOG 1 - FB CREATE'
-    end
+        @user = User.find_or_create_by(uid: auth['uid']) do |u|
+          u.username = auth['info']['name']
+          u.email = auth['info']['email']
+         # u.image = auth['info']['image']
+        end
+    
+        session[:user_id] = @user.id
+    
+        render '/home'
+      end
 
 
     # logout - user
@@ -78,6 +87,12 @@ class SessionsController < ApplicationController
     def destroycreator
         session.clear
         redirect_to '/'
+    end
+
+    private
+
+    def auth
+        request.env['omniauth.auth']
     end
 
 end

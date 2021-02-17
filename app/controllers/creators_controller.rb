@@ -3,9 +3,11 @@ class CreatorsController < ApplicationController
     def new
         # make a new creator user that we can access within our form.
         @creator = Creator.new
+        puts 'Log 1'
     end
 
     def create
+        puts 'log 2'
         @new_creator = Creator.new(creator_params)
 
         # if the creator is successfully saved then set the sessions id
@@ -22,6 +24,7 @@ class CreatorsController < ApplicationController
             # send the user back to thew new page to create a new creator
             # also this helps us display flash messages and makes so we don't
             # keep any saved information around such as username / email / password
+            puts 'log 3'
             render :new
         end
     end

@@ -25,7 +25,12 @@
      - This is covered as the creators can sign up, login, logout and secure passwords are used.
 
 - [ ] Your authentication system must also allow login from some other service. Facebook, Twitter, Foursquare, Github, etc...
-- [ ] You must include and make use of a nested resource with the appropriate RESTful URLs.
+
+- [x] You must include and make use of a nested resource with the appropriate RESTful URLs.
+    - TODO - Is this covered under albums and then being able to add a new song to an album using a nested resource?
+    - This is covered with the use of albums that have a nested songs resource where they can see a new form, create a new song and then be taken back to the album page to see all the songs for that album.
+
+
 - [ ] You must include a nested new route with form that relates to the parent resource.
 - [ ] You must include a nested index or show route.
 - [ ] Your forms should correctly display validation errors.

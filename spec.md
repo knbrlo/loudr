@@ -17,7 +17,8 @@
 - [x] Include a many-to-many relationship implemented with has_many :through associations. The join table must include a user-submittable attribute — that is to say, some attribute other than its foreign keys that can be submitted by the app's user
     - This is covered with the albums table where I've got two has_many through relationships with users and creators.
 
-- [ ] Your models must include reasonable validations for the simple attributes. You don't need to add every possible validation or duplicates, such as presence and a minimum length, but the models should defend against invalid data.
+- [x] Your models must include reasonable validations for the simple attributes. You don't need to add every possible validation or duplicates, such as presence and a minimum length, but the models should defend against invalid data.
+    - This is covered under the max length for albums and songs.
 
 - [ ] You must include at least one class level ActiveRecord scope method. a. Your scope method must be chainable, meaning that you must use ActiveRecord Query methods within it (such as .where and .order) rather than native ruby methods (such as #find_all or #sort).
 
@@ -52,21 +53,24 @@
 - [x] Error messages describing the validation failures must be present within the view.
     - This is completed with the sign up forms for creators and users, if the username or email has already been taken it'll display an error on the screen.
 
-- [ ] Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app.
+- [x] Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app.
+    - This is complete with the use of error partial.
 
 - [ ] Logic present in your controllers should be encapsulated as methods in your models.
+    
 
 - [x] Your views should use helper methods and partials when appropriate.
     - I've got helper methods included in my application_helper.rb file to assist with standard login checks for users and creators.
     - I'm using partials for my errors and will be using them for my forms later on.
 
-- [ ] Follow patterns in the Rails Style Guide and the Ruby Style Guide.
+- [x] Follow patterns in the Rails Style Guide and the Ruby Style Guide.
+    - An example of this is covered in the use of nested routes 
 
 
 - [x] Do not use scaffolding to build your project. Your goal here is to learn. Scaffold is a way to get up and running quickly, but learning a lot is not one of the benefits of scaffolding.
     - This is covered as the only command that I've used are ones to create the app and ones to create models as I need them.
 
-- [ ] Record at least a 30 min coding session (I'll keep this on Dropbox if needed.)
+- [x] Record at least a 30 min coding session (I'll keep this on Dropbox if needed.)
 
 
 Final Steps:

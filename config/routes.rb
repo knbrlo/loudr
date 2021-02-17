@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
+  # facebook
+  get '/auth/facebook/callback/' => 'sessions#fbcreate'
+
   delete '/logout' => 'sessions#destroy'
 
   # TODO - come back and make sure to remove any routes that you're not using.

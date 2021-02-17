@@ -59,6 +59,11 @@ class SessionsController < ApplicationController
         end
     end
 
+    # facebook
+    def fbcreate
+        puts 'LOG 1 - FB CREATE'
+    end
+
 
     # logout - user
     # todo - these are setup as different paths for user and creator so we can take different actions for each.

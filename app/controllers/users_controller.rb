@@ -7,14 +7,14 @@ class UsersController < ApplicationController
     end
 
     def create
-        @new_user = User.new(user_params)
+        @user = User.new(user_params)
 
         # if the user is successfully saved then set the session id
         # then redirect to the new page.
-        if @new_user.save
+        if @user.save
             
             # save the user id in the session so it can be access anywhere that's needed
-            session[:user_id] = @new_user.id
+            session[:user_id] = @user.id
 
             # send the user to the path for our primary object 
             redirect_to home_path

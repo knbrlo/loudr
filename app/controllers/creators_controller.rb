@@ -8,15 +8,15 @@ class CreatorsController < ApplicationController
 
     def create
         puts 'log 2'
-        @new_creator = Creator.new(creator_params)
+        @creator = Creator.new(creator_params)
 
         # if the creator is successfully saved then set the sessions id
         # then redirect to the new page.
 
-        if @new_creator.save
+        if @creator.save
 
             # save the creator id in the session so it can be accessed anywhere it's needed.
-            session[:creator_id] = @new_creator.id
+            session[:creator_id] = @creator.id
 
             # send the user to the path for our creator home page
             redirect_to home_creator_path

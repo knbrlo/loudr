@@ -62,4 +62,6 @@ TODO - Build this out
 
 You can get to this page from the **Account** and then clicking on the **Edit Account** link or visit using the direct link which is ```http://127.0.0.1:3000/users/:id/edit```. Here you can make changes to username, email or password. Also if you'd like to delete your account you can by clicking the light grey text at the bottom of the form.
 
-### 
+
+TODO - Go back through and add more authentication for each route sending the user / creator back if they try to access a resource that isn't theirs or if they're not logged in.
+

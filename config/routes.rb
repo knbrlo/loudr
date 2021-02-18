@@ -11,9 +11,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
-  # facebook
-  get '/auth/facebook/callback' => 'sessions#fbcreate'
-
   delete '/logout' => 'sessions#destroy'
 
   # TODO - come back and make sure to remove any routes that you're not using.
@@ -28,6 +25,9 @@ Rails.application.routes.draw do
   post '/login-creator' => 'sessions#createcreator'
   
   delete '/logout-creator' => 'sessions#destroycreator'
+
+  # google auth
+  get '/auth/:provider/callback' => 'sessions#googlecreate'
 
   # TODO - come back and make sure to remove any routes that you're not using.
   resources :creators

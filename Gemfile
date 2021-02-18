@@ -23,8 +23,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 
 # Omni auth gems
-gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth', '~> 1' # load highest level of omniauth v1, 1.9.1 at the time of 
+gem 'omniauth-oauth2'
+gem 'omniauth-google-oauth2', '~> 0.8.1'
 gem 'thin'
 gem 'dotenv-rails'
 

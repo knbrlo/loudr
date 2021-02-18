@@ -59,18 +59,20 @@ class SessionsController < ApplicationController
         end
     end
 
-    # facebook
-    def fbcreate
-        puts 'LOG 1 - FB CREATE'
-        @user = User.find_or_create_by(uid: auth['uid']) do |u|
-          u.username = auth['info']['name']
-          u.email = auth['info']['email']
-         # u.image = auth['info']['image']
-        end
-    
+    # google
+    def googlecreate
+        @user = User.from_omniauth(auth)
+        @user.save
         session[:user_id] = @user.id
-    
-        render '/home'
+        redirect_to home_path
+    end
+
+    def self.from_omniauth(auth)
+        where(email: auth.info.email).first_or_initialize do |user|
+          user.user_name = auth.info.name
+          user.email = auth.info.email
+          user.password = SecureRandom.hex
+        end
       end
 
 
@@ -90,9 +92,9 @@ class SessionsController < ApplicationController
     end
 
     private
-
+    
     def auth
-        request.env['omniauth.auth']
+      request.env['omniauth.auth']
     end
 
 end

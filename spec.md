@@ -26,7 +26,8 @@
     - This is covered as the users can sign up, login, logout and secure passwords are used.
      - This is covered as the creators can sign up, login, logout and secure passwords are used.
 
-- [ ] Your authentication system must also allow login from some other service. Facebook, Twitter, Foursquare, Github, etc...
+- [x] Your authentication system must also allow login from some other service. Facebook, Twitter, Foursquare, Github, etc...
+    - User can sign in with omniauth-google-oauth2
 
 - [x] You must include and make use of a nested resource with the appropriate RESTful URLs.
     - TODO - Is this covered under albums and then being able to add a new song to an album using a nested resource?

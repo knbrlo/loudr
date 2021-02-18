@@ -1,6 +1,6 @@
 <h1>New Song Page</h1>
 
-TODO - Add a back button that takes you back to the album page
+<!-- TODO - Add a back button that takes you back to the album page-->
 
 <%= form_for @song, url: "/albums/#{@song.album_id}/songs" do |f| %>
     <%= render partial: 'layouts/errors', locals: {object: @song} %>

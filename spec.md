@@ -30,7 +30,6 @@
     - User can sign in with omniauth-google-oauth2
 
 - [x] You must include and make use of a nested resource with the appropriate RESTful URLs.
-    - TODO - Is this covered under albums and then being able to add a new song to an album using a nested resource?
     - This is covered with the use of albums that have a nested songs resource where they can see a new form, create a new song and then be taken back to the album page to see all the songs for that album.
 
 

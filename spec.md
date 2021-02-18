@@ -72,10 +72,3 @@
     - This is covered as the only command that I've used are ones to create the app and ones to create models as I need them.
 
 - [x] Record at least a 30 min coding session (I'll keep this on Dropbox if needed.)
-
-
-Final Steps:
-- [ ] Update the readme.md to include running instructions.
-- [ ] Submit a video of how a user would interact with your working web application.
-- [ ] Write a blog post about the project and process.
-- [ ] When done, submit your GitHub repo's url, a link to your video demo, and a link to your blog post in the corresponding text boxes in the right rail. Hit "I'm done" to wrap it up.

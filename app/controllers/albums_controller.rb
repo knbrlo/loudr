@@ -47,7 +47,12 @@ class AlbumsController < ApplicationController
     end
 
     def show
-        @album = Album.find_by_id(params[:id])
+        # must be logged in to see album show page
+        if logged_in_user? || logged_in_creator?
+            @album = Album.find_by_id(params[:id])
+        else
+            redirect_to '/'
+        end
     end
     
 

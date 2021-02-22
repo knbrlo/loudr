@@ -5,6 +5,10 @@ class SessionsController < ApplicationController
         # user landing page, take them to the logged in user home page
         if logged_in_user?
             redirect_to home_path
+        elsif logged_in_creator?
+            # if they click on this link but they're logged in as a creator, then 
+            # take them back to their own home page.
+            redirect_to home_creator_path
         end
     end
 
@@ -13,6 +17,10 @@ class SessionsController < ApplicationController
         # creator landing page, take them to the logged in creator home page
         if logged_in_creator?
             redirect_to home_creator_path
+        elsif logged_in_user?
+            # if they click on this link but they're logged in as a user, then 
+            # take them back to their own home page.
+            redirect_to home_path
         end
     end
 

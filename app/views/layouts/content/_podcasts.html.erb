@@ -3,9 +3,9 @@
     <% if object.length > 0 %>
     <% object.each do |podcast| %>
         <div class="content-container-item">
-                <h3><%= podcast.name %></h3>
-                <p><%= podcast.category %></p>
-                <p>Released: <%= podcast.release_date %></p>
+            <h3><%= podcast.name %></h3>
+            <p><%= podcast.category %></p>
+            <p>Released: <%= podcast.release_date %></p>
         </div>
     <% end %>
     <% else %>

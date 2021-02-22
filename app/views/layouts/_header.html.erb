@@ -1,13 +1,24 @@
 <div id="nav-main">
-    <% if logged_in_user? %>
-        <%= link_to 'Home', home_path %>
-        
-        <%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-item'%>
+    <% if for_creator_url? %>
+        <div id="nav-main">
+        <!-- TODO Link to home, link to create new, link to my content, link to all creators, link to clips -->
+            <% if logged_in_creator? %>
+                <%= link_to 'Home', home_creator_path %>
+                <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'nav-item'%>
+            <% else %>
+                <%= link_to "Get Access", signup_creator_path %>
+                <%= link_to "Log In", login_creator_path %>
+            <% end%>
+        </div>
     <% else %>
-        <!>
-        <%= link_to "User Sign Up", signup_path %>
-        <%= link_to "User Log In", login_path %>
-    <% end%>
+    <!-- TODO Link to home, link to creators list, link to favorites, link to following, link to playlists -->
+        <% if logged_in_user? %>
+            <%= link_to 'Home', home_path %>
+            <%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-item'%>
+        <% else %>
+            <!>
+            <%= link_to "User Sign Up", signup_path %>
+            <%= link_to "User Log In", login_path %>
+        <% end%>
+    <% end %>
 </div>
-
-<!-- TODO Link to home, link to creators list, link to favorites, link to following, link to playlists -->

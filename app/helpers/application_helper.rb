@@ -18,4 +18,11 @@ module ApplicationHelper
         !!session[:creator_id]
     end
 
+    def for_creator_url?
+        current_url_for_creator = false
+        if request.original_url.include?('landingcreator')
+            current_url_for_creator = true
+        end
+        current_url_for_creator
+    end
 end

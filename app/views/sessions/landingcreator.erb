@@ -1,12 +1,1 @@
 <h1>Landing Creator</h1>
-<div id="nav-main">
-    <% if logged_in_creator? %>
-        <%= link_to 'Home', home_creator_path %>
-        <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'nav-item'%>
-    <% else %>
-        <%= link_to "Get Access", signup_creator_path %>
-        <%= link_to "Log In", login_creator_path %>
-    <% end%>
-</div>
-
-<!-- TODO Link to home, link to create new, link to my content, link to all creators, link to clips -->

@@ -18,6 +18,13 @@ module ApplicationHelper
         !!session[:creator_id]
     end
 
+    def check_authenticated
+        if !logged_in_user? && !logged_in_creator?
+            redirect_to '/'
+        end
+    end
+    
+    # todo - check to see if this is still needed and if not then remove it.
     def for_creator_url?
         current_url_for_creator = false
         if request.original_url.include?('landingcreator')

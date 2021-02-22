@@ -1,18 +1,16 @@
 class AlbumsController < ApplicationController
+    before_action :check_authenticated, only: [:index, :show]
 
     def index
         # must be logged in as a user or as a creator to see all albums
-        if logged_in_user? || logged_in_creator?
-            if params[:category].present?
-                @selected_category = params[:category].downcase!
-                if @selected_category == "edm"
-                    @albums = Album.edm_music   
-                end
-            else
-                @albums = Album.all
+        if params[:category].present?
+            @selected_category = params[:category].downcase!
+            if @selected_category == "edm"
+                @albums = Album.edm_music   
             end
         else
-            redirect_to '/'
+            # todo - change to released albums not just all albums and also set a max.
+            @albums = Album.all
         end
     end
 
@@ -48,11 +46,7 @@ class AlbumsController < ApplicationController
 
     def show
         # must be logged in to see album show page
-        if logged_in_user? || logged_in_creator?
-            @album = Album.find_by_id(params[:id])
-        else
-            redirect_to '/'
-        end
+        @album = Album.find_by_id(params[:id])
     end
     
 

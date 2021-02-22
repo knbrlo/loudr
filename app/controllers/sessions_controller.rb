@@ -32,8 +32,8 @@ class SessionsController < ApplicationController
     end
 
     def create
-         # clear the session if they're logged in as a creator and they try to sign in as a user.
-         session.clear
+        # clear the session if they're logged in as a creator and they try to sign in as a user.
+        session.clear
 
         @user = User.find_by(username: params[:user][:username])
         
@@ -61,6 +61,8 @@ class SessionsController < ApplicationController
         render :logincreator
     end
 
+    # todo - could have a user model to determine if logged in profile was user or creator.
+    # todo - look into enum in model for admin acccount, which role type.
     def createcreator
         # clear the session if they're logged in as a user and they try to sign in as a creator.
         session.clear

@@ -51,9 +51,23 @@ body {
     justify-content: center;
 }
 
+#footer-container div a {
+    color: white;
+    text-decoration: none;
+    background: red;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 90%;
+    text-align: left;
+}
+
+
 .footer-container-item {
     width: 200px;
     height: 100%;
     background: purple;
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
 }

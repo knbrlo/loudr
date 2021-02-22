@@ -21,6 +21,7 @@
     - This is covered under the max length for albums and songs.
 
 - [x] You must include at least one class level ActiveRecord scope method. a. Your scope method must be chainable, meaning that you must use ActiveRecord Query methods within it (such as .where and .order) rather than native ruby methods (such as #find_all or #sort).
+    - Covered with this url http://localhost:3000/albums?category=EDM
 
 - [x] Your application must provide standard user authentication, including signup, login, logout, and passwords.
     - This is covered as the users can sign up, login, logout and secure passwords are used.

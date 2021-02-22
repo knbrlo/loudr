@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_212658) do
+ActiveRecord::Schema.define(version: 2021_02_22_054430) do
 
   create_table "albums", force: :cascade do |t|
     t.string "name"
@@ -31,11 +31,31 @@ ActiveRecord::Schema.define(version: 2021_02_11_212658) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "recents", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "podcasts", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "duration"
+    t.string "category"
+    t.boolean "released"
+    t.string "release_date"
+    t.integer "play_count"
+    t.integer "creator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_recents_on_user_id"
+    t.index ["creator_id"], name: "index_podcasts_on_creator_id"
+  end
+
+  create_table "singles", force: :cascade do |t|
+    t.string "name"
+    t.string "duration"
+    t.string "category"
+    t.boolean "released"
+    t.string "release_date"
+    t.integer "play_count"
+    t.integer "creator_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["creator_id"], name: "index_singles_on_creator_id"
   end
 
   create_table "songs", force: :cascade do |t|

@@ -1,8 +1,14 @@
 class User < ApplicationRecord
 
     # relationships
+    has_many :singles
+    has_many :creators, through: :singles
+
     has_many :albums
     has_many :creators, through: :albums
+
+    has_many :podcasts
+    has_many :creators, through: :podcasts
 
     # validations and macros
     has_secure_password

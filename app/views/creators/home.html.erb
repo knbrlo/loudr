@@ -1,20 +1,5 @@
 <h1>Logged In - Creator Home Page</h1>
-
-<!-- TODO - Always check the user type on pages like this so they can't hack into it.-->
-<%= link_to "Create New Album", new_album_path %>
-
-<h2>My Albums</h2>
-<div>
-<% @all_albums.each do |album| %>
-    <h3>Album Name: <%= album.name %></h3>
-    <ul>
-        <li>Category: <%= album.category %></li>
-        <li>Released: <%= album.released %></li>
-        <li>Release Date: <%= album.release_date %></li>
-        <li><%= link_to 'Album Show Page', album_path(album)%></li>
-    </ul>
-    <br>
-    <br>
-<% end %>
-</div>
+<%= render partial: 'layouts/content/singles', locals: {object: @singles} %>
+<%= render partial: 'layouts/content/albums', locals: {object: @albums} %>
+<%= render partial: 'layouts/content/podcasts', locals: {object: @podcasts} %>
 

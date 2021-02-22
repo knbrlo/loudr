@@ -1,0 +1,20 @@
+<h2>Podcasts</h2>
+<div id="podcasts-container" class="content-container">
+    <% if object.length > 0 %>
+    <% object.each do |podcast| %>
+        <%= link_to podcast_path(podcast) do %>
+        <div class="content-container-item">
+            <h3><%= podcast.name %></h3>
+            <p><%= podcast.category %></p>
+            <p><%= podcast.release_date %></p>
+        </div>
+        <% end %>
+    <% end %>
+    <% else %>
+        <% if logged_in_creator? %>
+            <p>Create or add your first podcast!</p>
+        <% elsif logged_in_user? %>
+            <p>No released podcasts</p>
+        <% end %>
+    <% end %>
+</div>

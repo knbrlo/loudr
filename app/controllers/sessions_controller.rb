@@ -1,6 +1,27 @@
 class SessionsController < ApplicationController
 
-    def home
+    def landing
+        # if they're logged in as a user don't take them to the 
+        # user landing page, take them to the logged in user home page
+        if logged_in_user?
+            redirect_to home_path
+        elsif logged_in_creator?
+            # if they click on this link but they're logged in as a creator, then 
+            # take them back to their own home page.
+            redirect_to home_creator_path
+        end
+    end
+
+    def landingcreator
+        # if they're logged in as a creator don't take them to the 
+        # creator landing page, take them to the logged in creator home page
+        if logged_in_creator?
+            redirect_to home_creator_path
+        elsif logged_in_user?
+            # if they click on this link but they're logged in as a user, then 
+            # take them back to their own home page.
+            redirect_to home_path
+        end
     end
 
     # this creates a new user that we can use to login with
@@ -11,6 +32,9 @@ class SessionsController < ApplicationController
     end
 
     def create
+         # clear the session if they're logged in as a creator and they try to sign in as a user.
+         session.clear
+
         @user = User.find_by(username: params[:user][:username])
         
         # check if the user exists and if we can login
@@ -38,6 +62,10 @@ class SessionsController < ApplicationController
     end
 
     def createcreator
+        # clear the session if they're logged in as a user and they try to sign in as a creator.
+        session.clear
+
+        
         @creator = Creator.find_by(username: params[:creator][:username])
         
         # check if the creator exists and if we can login
@@ -66,15 +94,6 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to home_path
     end
-
-    def self.from_omniauth(auth)
-        where(email: auth.info.email).first_or_initialize do |user|
-          user.user_name = auth.info.name
-          user.email = auth.info.email
-          user.password = SecureRandom.hex
-        end
-      end
-
 
     # logout - user
     # todo - these are setup as different paths for user and creator so we can take different actions for each.

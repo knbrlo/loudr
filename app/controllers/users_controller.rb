@@ -25,14 +25,40 @@ class UsersController < ApplicationController
     end
 
     def home
-        # get all the released content 
-        # albums
-        # singles
-        # podcasts
+        # todo - get favorites 
 
-        @released_albums = Album.where(released: true)
+        # make sure the user is logged in to see the home path
+        if logged_in_user?
 
-        p @released_albums
+            # make empty arrays we can check for values
+            # and iterate over if there are values in the view.
+            @singles = []
+            @albums = []
+            @podcasts = []
+
+            # if there are singles in available then assign  
+            # them to the array we created above
+            # todo - set a max on this so we don't get too big of a payload.
+            if singles = Single.where(released: true)
+                @singles = singles
+            end
+
+            # if there are albums in available then assign  
+            # them to the array we created above
+            # todo - set a max on this so we don't get too big of a payload.
+            if albums = Album.where(released: true)
+                @albums = albums
+            end
+
+            # if there are albums in available then assign  
+            # them to the array we created above
+            # todo - set a max on this so we don't get too big of a payload.
+            if podcasts = Podcast.where(released: true)
+                @podcasts = podcasts
+            end
+        else
+            redirect_to '/'
+        end
     end
 
     private

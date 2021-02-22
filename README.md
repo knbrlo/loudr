@@ -65,3 +65,9 @@ You can get to this page from the **Account** and then clicking on the **Edit Ac
 
 TODO - Go back through and add more authentication for each route sending the user / creator back if they try to access a resource that isn't theirs or if they're not logged in.
 
+TODO - Add Recents
+TODO - Add Podcasts
+TODO - Add Favorites
+TODO - Add Playlists
+TODO - Add ability to play audio
+

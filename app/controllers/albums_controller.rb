@@ -17,7 +17,12 @@ class AlbumsController < ApplicationController
     end
 
     def new
-        @album = Album.new
+        # must be logged in as a creator to see form to make a new album
+        if logged_in_creator?
+            @album = Album.new
+        else
+            redirect_to '/'
+        end
     end
 
     def create

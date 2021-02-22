@@ -1,9 +1,19 @@
 class SessionsController < ApplicationController
 
     def landing
+        # if they're logged in as a user don't take them to the 
+        # user landing page, take them to the logged in user home page
+        if logged_in_user?
+            redirect_to home_path
+        end
     end
 
     def landingcreator
+        # if they're logged in as a creator don't take them to the 
+        # creator landing page, take them to the logged in creator home page
+        if logged_in_creator?
+            redirect_to home_creator_path
+        end
     end
 
     # this creates a new user that we can use to login with
@@ -14,6 +24,9 @@ class SessionsController < ApplicationController
     end
 
     def create
+         # clear the session if they're logged in as a creator and they try to sign in as a user.
+         session.clear
+
         @user = User.find_by(username: params[:user][:username])
         
         # check if the user exists and if we can login
@@ -41,6 +54,10 @@ class SessionsController < ApplicationController
     end
 
     def createcreator
+        # clear the session if they're logged in as a user and they try to sign in as a creator.
+        session.clear
+
+        
         @creator = Creator.find_by(username: params[:creator][:username])
         
         # check if the creator exists and if we can login

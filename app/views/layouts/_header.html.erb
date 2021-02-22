@@ -1,22 +1,22 @@
 <div id="header-container">
+<% if logged_in_creator? || logged_in_user? %>
+       <% if logged_in_creator? %>
+    <!-- TODO Link to home, link to create new, link to my content, link to all creators, link to clips -->
+        <%= link_to 'Home', home_creator_path %>
+        <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'nav-item'%>
+    <% elsif logged_in_user? %>
+    <!-- TODO Link to home, link to creators list, link to favorites, link to following, link to playlists -->
+        <%= link_to 'Home', home_path %>
+        <%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-item'%>
+    <% end%>
+<% else %>
     <% if for_creator_url? %>
-        <!-- TODO Link to home, link to create new, link to my content, link to all creators, link to clips -->
-            <% if logged_in_creator? %>
-                <%= link_to 'Home', home_creator_path %>
-                <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'nav-item'%>
-            <% else %>
-                <%= link_to "Get Access", signup_creator_path %>
-                <%= link_to "Log In", login_creator_path %>
-            <% end%>
+            <%= link_to "Get Access", signup_creator_path %>
+            <%= link_to "Log In", login_creator_path %>
     <% else %>
     <!-- TODO Link to home, link to creators list, link to favorites, link to following, link to playlists -->
-        <% if logged_in_user? %>
-            <%= link_to 'Home', home_path %>
-            <%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-item'%>
-        <% else %>
-            <!>
             <%= link_to "Sign Up", signup_path %>
             <%= link_to "Log In", login_path %>
-        <% end%>
     <% end %>
+<% end %>
 </div>

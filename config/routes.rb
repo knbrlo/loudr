@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  # root
+  # landing
   root 'sessions#landing'
+  get '/landingcreator' => 'sessions#landingcreator'
   
   # sessions 
   get '/login' => 'sessions#new'
@@ -13,14 +14,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   delete '/logout-creator' => 'sessions#destroycreator'
 
-  # sessions - additional
-  get '/landingcreator' => 'sessions#landingcreator'
-
-
   # user
   get '/home' => 'users#home'
   get '/signup' => 'users#new' 
-
 
   # TODO - come back and make sure to remove any routes that you're not using.
   resources :users
@@ -32,18 +28,14 @@ Rails.application.routes.draw do
   # TODO - come back and make sure to remove any routes that you're not using.
   resources :creators
   
-
   # google auth
   get '/auth/:provider/callback' => 'sessions#googlecreate'
 
-  
   # albums
-
   # TODO - come back and make sure to remove any routes that you're not using.
   resources :albums
 
   resources :albums do
     resources :songs, only: [:new, :create, :index]
   end
-
 end

@@ -1,20 +1,19 @@
 class AlbumsController < ApplicationController
 
     def index
-        
-        if params[:category].present?
-        
-            @selected_category = params[:category].downcase!
-
-            # http://localhost:3000/albums?category=EDM
-            
-            if @selected_category == "edm"
-                @albums = Album.edm_music   
+        # must be logged in as a user or as a creator to see all albums
+        if logged_in_user? || logged_in_creator?
+            if params[:category].present?
+                @selected_category = params[:category].downcase!
+                if @selected_category == "edm"
+                    @albums = Album.edm_music   
+                end
+            else
+                @albums = Album.all
             end
         else
-            @albums = Album.all
+            redirect_to '/'
         end
-
     end
 
     def new

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :singles
   # landing
   root 'sessions#landing'
   get '/landingcreator' => 'sessions#landingcreator'

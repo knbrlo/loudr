@@ -34,12 +34,12 @@ class CreatorsController < ApplicationController
 
             # make an empty array we can check for values
             # and iterate over if there are values in the view.
-            @all_albums = []
+            @albums = []
 
             # if there are albums in available them assign them to the 
             # array we created above
             if albums = Album.where(creator_id: session[:creator_id])
-                @all_albums = albums
+                @albums = albums
             end
         else
             redirect_to '/'

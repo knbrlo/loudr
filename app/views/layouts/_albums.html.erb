@@ -1,0 +1,18 @@
+<h2>Albums</h2>
+<div id="albums-container">
+    <% if object.length > 0 %>
+    <% object.each do |album| %>
+        <div class="albums-container-item">
+                <h3><%= album.name %></h3>
+                <p><%= album.category %></p>
+                <p>Released: <%= album.release_date %></p>
+        </div>
+    <% end %>
+    <% else %>
+        <% if logged_in_creator? %>
+            <p>Create or add your first album!</p>
+        <% elsif logged_in_user? %>
+            <p>No released albums</p>
+        <% end %>
+    <% end %>
+</div>

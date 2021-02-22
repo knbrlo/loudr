@@ -93,3 +93,21 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+/* Application Styling */
+#albums-container {
+    display: flex;
+    flex-direction: row;
+    background: gray;
+    height: 180px;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.albums-container-item {
+    width: 140px;
+    height: 140px;
+    background: white;
+    border-radius: 6px;
+    margin-right: 20px;
+}

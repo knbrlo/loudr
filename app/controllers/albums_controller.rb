@@ -26,16 +26,23 @@ class AlbumsController < ApplicationController
     end
 
     def create
-        @album = current_creator.albums.build(album_params)
+        # must be logged in as a creator to post to make a new album
+        if logged_in_creator?
 
-        # if the album is successfully saved then proceed and redirect to the next page
-        if @album.save
-            
-            # send the user to the album detail page where they can add songs
-            redirect_to album_path(@album)
+            # make the new album based on the current creator
+            @album = current_creator.albums.build(album_params)
+
+            # if the album is successfully saved then proceed and redirect to the next page
+            if @album.save
+                
+                # send the user to the album detail page where they can add songs
+                redirect_to album_path(@album)
+            else
+                # send the user back to the new album page
+                render :new
+            end
         else
-            # send the user back to the new album page
-            render :new
+            redirect_to '/'
         end
     end
 

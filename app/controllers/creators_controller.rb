@@ -32,14 +32,29 @@ class CreatorsController < ApplicationController
         # make sure the creator is logged in to see the home-creator path
         if logged_in_creator?
 
-            # make an empty array we can check for values
+            # make empty arrays we can check for values
             # and iterate over if there are values in the view.
+            @singles = []
             @albums = []
+            @podcasts = []
 
-            # if there are albums in available them assign them to the 
-            # array we created above
+
+            # if there are singles in available then assign  
+            # them to the array we created above
+            if singles = Single.where(creator_id: session[:creator_id])
+                @singles = singles
+            end
+
+            # if there are albums in available then assign  
+            # them to the array we created above
             if albums = Album.where(creator_id: session[:creator_id])
                 @albums = albums
+            end
+
+            # if there are albums in available then assign  
+            # them to the array we created above
+            if podcasts = Podcast.where(creator_id: session[:creator_id])
+                @podcasts = podcasts
             end
         else
             redirect_to '/'

@@ -1,0 +1,18 @@
+<h2>Singles</h2>
+<div id="singles-container" class="content-container">
+    <% if object.length > 0 %>
+    <% object.each do |single| %>
+        <div class="content-container-item">
+                <h3><%= single.name %></h3>
+                <p><%= single.category %></p>
+                <p>Released: <%= single.release_date %></p>
+        </div>
+    <% end %>
+    <% else %>
+        <% if logged_in_creator? %>
+            <p>Create or add your first single!</p>
+        <% elsif logged_in_user? %>
+            <p>No released singles</p>
+        <% end %>
+    <% end %>
+</div>

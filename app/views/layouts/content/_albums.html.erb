@@ -1,8 +1,8 @@
 <h2>Albums</h2>
-<div id="albums-container">
+<div id="albums-container" class="content-container">
     <% if object.length > 0 %>
     <% object.each do |album| %>
-        <div class="albums-container-item">
+        <div class="content-container-item">
                 <h3><%= album.name %></h3>
                 <p><%= album.category %></p>
                 <p>Released: <%= album.release_date %></p>

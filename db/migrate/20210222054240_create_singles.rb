@@ -7,6 +7,7 @@ class CreateSingles < ActiveRecord::Migration[6.1]
       t.boolean :released
       t.string :release_date
       t.integer :play_count
+      t.belongs_to :creator
 
       t.timestamps
     end

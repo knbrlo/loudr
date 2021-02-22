@@ -96,7 +96,7 @@ body {
 }
 
 /* Application Styling */
-#albums-container {
+.content-container {
     display: flex;
     flex-direction: row;
     background: gray;
@@ -105,7 +105,7 @@ body {
     padding-left: 40px;
 }
 
-.albums-container-item {
+.content-container-item {
     width: 140px;
     height: 140px;
     background: white;

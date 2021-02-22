@@ -39,8 +39,10 @@ ActiveRecord::Schema.define(version: 2021_02_22_054430) do
     t.boolean "released"
     t.string "release_date"
     t.integer "play_count"
+    t.integer "creator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["creator_id"], name: "index_podcasts_on_creator_id"
   end
 
   create_table "singles", force: :cascade do |t|
@@ -50,8 +52,10 @@ ActiveRecord::Schema.define(version: 2021_02_22_054430) do
     t.boolean "released"
     t.string "release_date"
     t.integer "play_count"
+    t.integer "creator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["creator_id"], name: "index_singles_on_creator_id"
   end
 
   create_table "songs", force: :cascade do |t|

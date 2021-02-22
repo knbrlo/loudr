@@ -46,8 +46,4 @@ Rails.application.routes.draw do
     resources :songs, only: [:new, :create, :index]
   end
 
-  # recents
-  # TODO - come back and make sure to remove any routes that you're not using.
-  resources :recents
-
 end

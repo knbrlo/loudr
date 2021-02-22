@@ -6,11 +6,12 @@ class CreatorsController < ApplicationController
     end
 
     def create
+
+        # create the creator from the params from the form.
         @creator = Creator.new(creator_params)
 
         # if the creator is successfully saved then set the sessions id
         # then redirect to the new page.
-
         if @creator.save
 
             # save the creator id in the session so it can be accessed anywhere it's needed.
@@ -27,11 +28,21 @@ class CreatorsController < ApplicationController
     end
 
     def home
-        # make sure the creator id is valid and available
-        # make sure there are albums in the returned results
-        if session[:creator_id] && albums = Album.where(creator_id: session[:creator_id])
-            @all_albums = albums
+
+        # make sure the creator is logged in to see the home-creator path
+        if logged_in_creator?
+
+            # make an empty array we can check for values
+            # and iterate over if there are values in the view.
+            @all_albums = []
+
+            # if there are albums in available them assign them to the 
+            # array we created above
+            if albums = Album.where(creator_id: session[:creator_id])
+                @all_albums = albums
+            end
         else
+            redirect_to '/'
         end
     end
 

@@ -5,6 +5,7 @@
 
 <h2>My Albums</h2>
 <div>
+<% if @all_albums.length > 0 %>
 <% @all_albums.each do |album| %>
     <h3>Album Name: <%= album.name %></h3>
     <ul>
@@ -15,6 +16,9 @@
     </ul>
     <br>
     <br>
+<% end %>
+<% else %>
+<p>Create or add your first album!</p>
 <% end %>
 </div>
 

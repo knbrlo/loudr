@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
-    def home
+    def landing
+    end
+
+    def landingcreator
     end
 
     # this creates a new user that we can use to login with

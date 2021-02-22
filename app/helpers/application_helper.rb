@@ -17,4 +17,5 @@ module ApplicationHelper
     def logged_in_creator?
         !!session[:creator_id]
     end
+
 end

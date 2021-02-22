@@ -1,0 +1,13 @@
+<div id="nav-main">
+    <% if logged_in_user? %>
+        <%= link_to 'Home', home_path %>
+        
+        <%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-item'%>
+    <% else %>
+        <!>
+        <%= link_to "User Sign Up", signup_path %>
+        <%= link_to "User Log In", login_path %>
+    <% end%>
+</div>
+
+<!-- TODO Link to home, link to creators list, link to favorites, link to following, link to playlists -->

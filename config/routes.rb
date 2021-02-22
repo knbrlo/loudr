@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :podcasts
-  resources :singles
   # landing
   root 'sessions#landing'
   get '/landingcreator' => 'sessions#landingcreator'
@@ -33,9 +31,11 @@ Rails.application.routes.draw do
   # google auth
   get '/auth/:provider/callback' => 'sessions#googlecreate'
 
-  # albums
+  # content
   # TODO - come back and make sure to remove any routes that you're not using.
   resources :albums
+  resources :podcasts
+  resources :singles
 
   resources :albums do
     resources :songs, only: [:new, :create, :index]

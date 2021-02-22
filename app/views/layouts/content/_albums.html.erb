@@ -2,11 +2,13 @@
 <div id="albums-container" class="content-container">
     <% if object.length > 0 %>
     <% object.each do |album| %>
+        <%= link_to album_path(album) do %>
         <div class="content-container-item">
             <h3><%= album.name %></h3>
             <p><%= album.category %></p>
-            <p>Released: <%= album.release_date %></p>
+            <p><%= album.release_date %></p>
         </div>
+        <% end %>
     <% end %>
     <% else %>
         <% if logged_in_creator? %>

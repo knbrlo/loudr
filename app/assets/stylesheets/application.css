@@ -30,6 +30,10 @@ body {
     margin: 0;
 }
 
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
 #application-container {
     margin-top: 120px;
     min-height: 100vh;
@@ -111,4 +115,8 @@ body {
     background: white;
     border-radius: 6px;
     margin-right: 20px;
+    padding-top: 2px;
+    padding-left: 10px;
+    color: black;
 }
+

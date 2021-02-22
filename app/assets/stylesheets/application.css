@@ -25,7 +25,18 @@ body {
     display: flex;
     flex-direction: row;
     height: 80px;
-    width: 100%;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+#header-container > a {
+    color: white;
+    text-decoration: none;
+    background: red;
+    margin-left: 20px;
+    padding-top: 30px;
+    width: 120px;
+    text-align: center;
 }
 
 #footer-container {
@@ -37,10 +48,11 @@ body {
     width: 100%;
     position: fixed;
     bottom: 0;
+    justify-content: center;
 }
 
 .footer-container-item {
-    width: 100px;
+    width: 200px;
     height: 100%;
     background: purple;
     margin-left: 20px;

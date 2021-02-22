@@ -6,11 +6,14 @@
     </div>
     <div class="footer-container-item">
         <h3 class="footer-container-header">Communities</h3>
-        <%= link_to "For Artists", landingcreator_path %>
+        <% if for_creator_url? %>
+            <%= link_to "For Users", root_path %>
+        <% else %>
+            <%= link_to "For Artists", landingcreator_path %>
+        <% end %>
     </div>
     <div class="footer-container-item">
         <h3 class="footer-container-header">Useful Links</h3>
-        <%= link_to "For Users", root_path %>
     </div>
 </div>
 

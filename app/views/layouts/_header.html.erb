@@ -1,6 +1,5 @@
-<div id="nav-main">
+<div id="header-container">
     <% if for_creator_url? %>
-        <div id="nav-main">
         <!-- TODO Link to home, link to create new, link to my content, link to all creators, link to clips -->
             <% if logged_in_creator? %>
                 <%= link_to 'Home', home_creator_path %>
@@ -9,7 +8,6 @@
                 <%= link_to "Get Access", signup_creator_path %>
                 <%= link_to "Log In", login_creator_path %>
             <% end%>
-        </div>
     <% else %>
     <!-- TODO Link to home, link to creators list, link to favorites, link to following, link to playlists -->
         <% if logged_in_user? %>

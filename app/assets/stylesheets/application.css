@@ -19,6 +19,15 @@ body {
     margin: 0px;
 }
 
+#header-container {
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 100%;
+}
+
 #footer-container {
     background: black;
     color: white;

@@ -1,19 +1,9 @@
 <h1>Creator Login Page</h1>
-
 <%= flash[:error] %>
-
-<!-- TODO - Replace the form with a partial that we can use in two places. -->
-
-<!-- We specify the url here so that we don't post back to /users 
-and /users is default because rails assumes that because we're dealing 
-with a user object -->
 <%= form_for @creator, url: '/login-creator' do |f| %>
-
     <%= f.label :username %>
     <%= f.text_field :username %>
-
     <%= f.label :password %>
     <%= f.password_field :password %>
-
     <%= f.submit "Login" %>
 <% end %>

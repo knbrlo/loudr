@@ -1,22 +1,10 @@
 <h1>User Login Page</h1>
-
-<!-- TODO - Explain why errors are displayed here, I think it has to do with 
-making sure we don't save anything when the form refreshes if there's an error -->
 <%= flash[:error] %>
-
-<!-- TODO - Replace the form with a partial that we can use in two places. -->
-
 <%= link_to "Continue with Google",  "/auth/google_oauth2", method: "post" %>
-
-<!-- We specify the url here so that we don't post back to /users 
-and /users is default because rails assumes that because we're dealing 
-with a user object -->
 <%= form_for @user, url: '/login' do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %>
-
     <%= f.label :password %>
     <%= f.password_field :password %>
-
     <%= f.submit "Login" %>
 <% end %>

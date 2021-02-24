@@ -25,7 +25,5 @@ podcast = Podcast.create([{name: 'Podcast 2', description: 'Podcast 2 descriptio
 podcast = Podcast.create([{name: 'Podcast 3', description: 'Podcast 3 description', duration: '5:29', category: 'investing', released: true, release_date: 'Oct 3, 2020', play_count: 2, creator_id: 1}])
 podcast = Podcast.create([{name: 'Podcast 4', description: 'Podcast 4 description', duration: '6:11', category: 'stories', released: true, release_date: 'Nov 20, 2020', play_count: 44, creator_id: 1}])
 
-
-
 # user seeds
 User.create(username: 'user123', email: 'user123@gmail.com', password: '123')

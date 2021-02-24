@@ -29,4 +29,13 @@ module ApplicationHelper
         end
         current_url_for_creator
     end
+
+    def nested_album_url?
+        url_for_nested_album = false
+        if request.original_url.include?('/album')
+            url_for_nested_album = true
+        end
+        url_for_nested_album
+    end
+    
 end

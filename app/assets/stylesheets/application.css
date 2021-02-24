@@ -19,6 +19,22 @@ a:hover, a:visited, a:link, a:active {
 }
 
 #application-container {
+    display: flex;
+    flex-direction: row;
+    background: orange;
+    height: 100%;
+}
+
+#navbar-container {
+    background: red;
+    height: 100%;
+    width: 240px;
+    padding-top: 160px;
+    padding-left: 20px;
+}
+
+
+#cotent-container {
     margin-top: 120px;
     min-height: 100vh;
     overflow: hidden;

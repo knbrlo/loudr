@@ -1,7 +1,9 @@
 class SongsController < ApplicationController
 
     def index
+        
         @album = Album.find_by_id(params[:album_id])
+
     end
 
     def new
@@ -16,6 +18,9 @@ class SongsController < ApplicationController
         else
             render :new
         end
+    end
+
+    def show
     end
 
     private

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :albums
   resources :podcasts
   resources :singles
+  
+  resources :songs, only: [:index, :show]
 
   resources :albums do
     resources :songs, only: [:new, :create, :index]

@@ -12,7 +12,10 @@
   <body>
     <%= render "layouts/header" %>
     <div id="application-container">
-      <%= yield %>
+      <%= render "layouts/navbar" %>
+      <div id="cotent-container">
+        <%= yield %>
+      </div>
     </div>
     <%= render "layouts/footer" %>
   </body>

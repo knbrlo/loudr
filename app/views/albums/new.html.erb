@@ -1,5 +1,4 @@
 <h1>Create New Album</h1>
-
 <%= form_for(@album) do |f| %>
     <%= render partial: 'layouts/errors', locals: {object: @album} %>
     <%= f.label :name %>

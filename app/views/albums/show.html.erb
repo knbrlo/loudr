@@ -1,25 +1,17 @@
 <h1>Album Show Page</h1>
 
-<!-- DRY FIX NEEDED -->
 <ul>
     <li>Album Name: <%= @album.name %></li>
     <li>Category: <%= @album.category %></li>
     <li>Released: <%= @album.released %></li>
     <li>Release Date: <%= @album.release_date %></li>
 </ul>
-
 <h2>Songs in This album</h2>
 <ul>
     <% @album.songs.each do |song|%>
         <li><%= song.name %></li>
     <% end %>
 </ul>
-
 <% if logged_in_creator? %>
     <%= link_to 'Add Song to Album', new_album_song_path(@album) %>
 <% end %>
-
-
-<!-- TODO - Create a song edit link and page where you can go in and change the details of the song if you'd like.-->
-<!-- TODO - Add the ability to delete a song from the album on the song edit page.-->
-<!-- TODO - Add ability to go back to the user or creator home page if they open an album show page -->

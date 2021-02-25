@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto'
 }
 
 *:before,
@@ -69,7 +70,7 @@ a:hover, a:visited, a:link, a:active {
 .header-container-button {
     color: white;
     text-decoration: none;
-    background: #008A94;
+    background: #4e84fe;
     margin-left: 34px;
     padding-top: 13px;
     width: 120px;
@@ -79,7 +80,7 @@ a:hover, a:visited, a:link, a:active {
 }
 
 #header-container-logo {
-    background:#008A94;
+    background:#4e84fe;
     width: 240px;
     height: 100%;
 }

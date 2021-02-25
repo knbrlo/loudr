@@ -334,3 +334,50 @@ a:hover, a:visited, a:link, a:active {
     position: absolute;
     bottom: 0;
 }
+
+/* Home - Top Songs */
+#topsongs-container {
+    width: 100%;
+}
+
+#topsongs-container-content {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-flow: column wrap;
+}
+
+.topsongs-container-content-item {
+    width: 50%;
+    height: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.topsongs-container-content-item img {
+    margin-left: 30px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    width: 72px;
+    height: 72px;
+    border-radius: 5px;
+    background: black;
+}
+
+.topsongs-container-content-item-title {
+    margin-left: 70px;
+    height: 100%;
+    margin-top: 0px;
+    padding-top: 38px;
+    width: 30%;
+}
+
+.topsongs-container-content-item-duration {
+    margin-left: 70px;
+    height: 100%;
+    margin-top: 0px;
+    padding-top: 38px;
+    width: 30%;
+}

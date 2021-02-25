@@ -1,12 +1,10 @@
 <h1>Albums Page</h1>
+<% puts @albums %>
 <ul>
-    <%= @albums.each do |album| %>
+    <% @albums.each do |album| %>
         <li>Album Name: <%= album.name %></li>
         <li>Category: <%= album.category %></li>
         <li>Released: <%= album.released %></li>
         <li>Release Date: <%= album.release_date %></li>
     <% end %>
 </ul>
-
-
-

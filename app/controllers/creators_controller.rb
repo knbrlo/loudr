@@ -1,5 +1,8 @@
 class CreatorsController < ApplicationController
 
+    def index
+    end
+
     def new
         @creator = Creator.new
     end

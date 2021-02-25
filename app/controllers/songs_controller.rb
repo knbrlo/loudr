@@ -1,7 +1,6 @@
 class SongsController < ApplicationController
 
     def index
-
         if nested_album_url?
             @album = Album.find_by_id(params[:album_id])
             if @album 
@@ -10,6 +9,7 @@ class SongsController < ApplicationController
                 redirect_to home_path
             end
         else
+            @songs = Album.released_album_songs
         end
     end
 

@@ -2,28 +2,28 @@
     <div id="navbar-container-main-menu" class="navbar-container-section">
         <h2>Main Menu</h2>
         <div class="navbar-container-selection-item">
-            <p>Home</p>
+            <%= link_to 'Home',home_path %>
         </div>
         <div class="navbar-container-selection-item">
             <%= link_to 'Songs', songs_path %>
         </div>
         <div class="navbar-container-selection-item">
-            <p>Albums</p>
+            <%= link_to 'Albums', albums_path %>
         </div>
         <div class="navbar-container-selection-item">
-            <p>Artists</p>
+            <%= link_to 'Creators', creators_path %>
         </div>
         <div class="navbar-container-selection-item">
-            <p>Music</p>
+            <%= link_to 'Singles', singles_path %>
         </div>
         <div class="navbar-container-selection-item">
-            <p>Podcasts</p>
+            <%= link_to 'Podcasts', podcasts_path %>
         </div>
     </div>
     <div id="navbar-container-yours" class="navbar-container-section">
         <h2>Yours</h2>
         <div class="navbar-container-selection-item">
-            <p>Favourite</p>
+            <p>Favorite</p>
         </div>
         <div class="navbar-container-selection-item">
             <p>Play History</p>

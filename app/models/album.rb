@@ -9,4 +9,14 @@ class Album < ApplicationRecord
     validates :category, length: { maximum: 50 }
 
     scope :edm_music, -> {where(category: "EDM")}
+
+    def self.released_album_songs
+        @songs = []
+        self.where(released: true).each do |album|
+            album.songs.each do |song|
+                @songs << song
+            end
+        end
+        @songs
+    end
 end

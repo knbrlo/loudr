@@ -12,7 +12,9 @@
   <body>
     <%= render "layouts/header" %>
     <div id="application-container">
-      <%= render "layouts/navbar" %>
+      <% if logged_in_user? %>
+        <%= render "layouts/navbar" %>
+      <% end %>
       <div id="cotent-container">
         <%= yield %>
       </div>

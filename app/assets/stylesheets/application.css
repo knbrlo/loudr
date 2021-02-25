@@ -36,10 +36,32 @@ a:hover, a:visited, a:link, a:active {
 #navbar-container {
     background: white;
     width: 240px;
-    padding-top: 160px;
-    padding-left: 20px;
+    padding-top: 80px;
     position: fixed;
     height: 100%;
+}
+
+#navbar-container h4 {
+    color: #5a5a8f;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navbar-container-selection-item {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 60px;
+}
+
+#navbar-cotainer-selection-home {
+    background: #f5f8ff;
+}
+
+.navbar-container-selection-item p {
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 #content-container {

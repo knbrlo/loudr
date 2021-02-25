@@ -8,7 +8,7 @@ class AlbumsController < ApplicationController
                 @albums = Album.edm_music   
             end
         else
-            @albums = Album.all
+            @albums = Album.released_albums
         end
     end
 

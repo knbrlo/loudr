@@ -8,6 +8,7 @@ class Album < ApplicationRecord
     validates :name, length: { maximum: 50 }
     validates :category, length: { maximum: 50 }
 
+    scope :released_albums, -> {where(released: true )}
     scope :edm_music, -> {where(category: "EDM")}
 
     def self.released_album_songs

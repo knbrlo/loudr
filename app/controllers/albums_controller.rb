@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-    before_action :check_authenticated_user_or_creator, only: [:index, :show]
+    before_action :check_unauthenticated_redirect_needed, only: [:index, :show]
 
     def index
         if params[:category].present?

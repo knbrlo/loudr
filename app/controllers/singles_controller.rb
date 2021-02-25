@@ -1,5 +1,5 @@
 class SinglesController < ApplicationController
-    before_action :check_authenticated, only: [:index, :show]
+    before_action :check_unauthenticated_redirect_needed, only: [:index, :show]
 
     def index
     end

@@ -16,10 +16,18 @@ module ApplicationHelper
         !!session[:creator_id]
     end
 
-    def check_authenticated
+    def check_unauthenticated_redirect_needed
         if !logged_in_user? && !logged_in_creator?
             redirect_to '/'
         end
+    end
+
+    def authenticated_user_or_creator?
+        logged_in_account = false
+        if !logged_in_user? || !logged_in_creator?
+            logged_in_account = true
+        end
+        logged_in_account
     end
     
     def for_creator_url?

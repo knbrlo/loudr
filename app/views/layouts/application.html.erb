@@ -14,7 +14,7 @@
   <body>
     <%= render "layouts/header" %>
     <div id="application-container">
-      <% if logged_in_user? %>
+      <% if authenticated_user_or_creator? %>
         <%= render "layouts/navbar" %>
       <% end %>
       <div id="cotent-container">

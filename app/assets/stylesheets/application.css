@@ -13,6 +13,8 @@ body {
     height: 100%;
     position: relative;
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 a:hover, a:visited, a:link, a:active {
@@ -41,9 +43,10 @@ a:hover, a:visited, a:link, a:active {
 }
 
 #content-container {
-    margin-top: 120px;
+    margin-top: 80px;
     padding-bottom: 100px;
-    margin-left: 240px;
+    margin-left: 260px;
+    width: 88%;
 }
 
 #header-container {
@@ -130,6 +133,7 @@ a:hover, a:visited, a:link, a:active {
     height: 180px;
     align-items: center;
     padding-left: 40px;
+    overflow: hidden;
 }
 
 .content-container-item {
@@ -153,4 +157,53 @@ a:hover, a:visited, a:link, a:active {
     position: fixed;
     height: 90px;
     bottom: 0;
+}
+
+.application-container-home-section {
+    width: 100%;
+    min-height: 20px;
+    margin-bottom: 40px;
+}
+
+.application-container-home-section h2 {
+    color: #5a5a8f;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#recommended-container {
+    width: 100%;
+}
+
+#recommended-container-content {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: inherit;
+    align-items: center;
+    overflow: scroll;
+}
+
+.recommended-container-content-item {
+    min-width: 400px;
+    height: 90%;
+    background: orange;
+    margin-right: 40px;
+    border-radius: 5px;
+}
+
+.recommended-container-content-item:nth-child(1) {
+    background: #311279;
+}
+
+.recommended-container-content-item:nth-child(2) {
+    background: #dac296;
+}
+
+.recommended-container-content-item:nth-child(3) {
+    background: #335ad3;
+}
+.recommended-container-content-item:nth-child(4) {
+    background: #311279;
 }

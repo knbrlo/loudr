@@ -13,6 +13,10 @@ class SongsController < ApplicationController
         end
     end
 
+    def show
+        redirect_to home_path
+    end
+
     def new
         @song = Song.new(album_id: params[:album_id])
     end
@@ -25,9 +29,6 @@ class SongsController < ApplicationController
         else
             render :new
         end
-    end
-
-    def show
     end
 
     private

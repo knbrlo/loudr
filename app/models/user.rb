@@ -10,6 +10,7 @@ class User < ApplicationRecord
     has_secure_password
     validates :username, :email, presence: true
     validates :username, :email, uniqueness: true
+    validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 
     def self.from_omniauth(auth)
         where(email: auth.info.email).first_or_initialize do |user|

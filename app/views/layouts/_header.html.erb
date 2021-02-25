@@ -7,17 +7,17 @@
             <% if logged_in_creator? %>
                 <%= link_to 'Home', home_creator_path %>
                 <%= link_to "New Album", new_album_path %>       
-                <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'header-container-item'%>
+                <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'header-container-button'%>
             <% elsif logged_in_user? %>
-                <%= link_to 'Log Out', logout_path, method: :delete, class: 'header-container-item' %>
+                <%= link_to 'Log Out', logout_path, method: :delete, class: 'header-container-button' %>
             <% end%>
         <% else %>
             <% if for_creator_url? %>
                 <%= link_to "Get Access", signup_creator_path %>
                 <%= link_to "Log In", login_creator_path %>
             <% else %>
-                <%= link_to "Sign Up", signup_path, class: 'header-container-item' %>
-                <%= link_to "Log In", login_path, class: 'header-container-item' %>
+                <%= link_to "Sign Up", signup_path, class: 'header-container-button' %>
+                <%= link_to "Log In", login_path, class: 'header-container-button' %>
             <% end %>
         <% end %>
     </div>

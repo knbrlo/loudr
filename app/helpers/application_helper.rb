@@ -37,5 +37,4 @@ module ApplicationHelper
         end
         url_for_nested_album
     end
-    
 end

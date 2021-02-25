@@ -16,7 +16,7 @@ class AlbumsController < ApplicationController
         if logged_in_creator?
             @album = Album.new
         else
-            redirect_to '/'
+            redirect_to home_path
         end
     end
 

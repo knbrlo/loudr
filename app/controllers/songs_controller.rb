@@ -18,7 +18,12 @@ class SongsController < ApplicationController
     end
 
     def new
-        @song = Song.new(album_id: params[:album_id])
+        @album = Album.find_by_id(params[:album_id])
+        if @album
+            @song = Song.new(album_id: params[:album_id])
+        else
+            redirect_to home_path
+        end
     end
 
     def create

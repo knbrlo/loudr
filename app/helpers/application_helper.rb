@@ -24,7 +24,7 @@ module ApplicationHelper
 
     def authenticated_user_or_creator?
         logged_in_account = false
-        if !logged_in_user? || !logged_in_creator?
+        if logged_in_user? || logged_in_creator?
             logged_in_account = true
         end
         logged_in_account

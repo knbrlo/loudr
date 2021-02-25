@@ -21,6 +21,11 @@
         <%= yield %>
       </div>
     </div>
-    <%= render "layouts/footer" %>
+    <% if authenticated_user_or_creator? %>
+      <%= render "layouts/player" %>
+    <% end %>
+    <% if !authenticated_user_or_creator? %>
+        <%= render "layouts/footer" %>
+    <% end %>  
   </body>
 </html>

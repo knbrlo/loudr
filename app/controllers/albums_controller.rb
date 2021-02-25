@@ -35,6 +35,9 @@ class AlbumsController < ApplicationController
 
     def show
         @album = Album.find_by_id(params[:id])
+        if !@album
+            redirect_to home_path
+        end
     end
     
 

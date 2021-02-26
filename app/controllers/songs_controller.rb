@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+    before_action :edit_destroy_checks, only: [:edit, :destroy]
 
     def index
         if nested_album_url?
@@ -37,13 +38,20 @@ class SongsController < ApplicationController
     end
 
     def edit
-        check_if_logged_in_creator
-        check_album_exists
-        check_song_exists
-        check_if_creator_owns_album
+    end
+
+    def destroy
+        @song.destroy
+        redirect_to album_path(@album)
     end
 
     private
+    def edit_destroy_checks
+        check_if_logged_in_creator
+        @album = check_album_exists
+        @song = check_song_exists
+        check_if_creator_owns_album
+    end
 
     def check_if_logged_in_creator
         if !logged_in_creator?
@@ -56,13 +64,15 @@ class SongsController < ApplicationController
         if !@album
             redirect_to home_path
         end
+        @album
     end
 
     def check_song_exists
-        @song = Album.find_by_id(params[:id])
-        if !@album
+        @song = Song.find_by_id(params[:id])
+        if !@song
             redirect_to home_path
         end
+        @song
     end
     
     def check_if_creator_owns_album

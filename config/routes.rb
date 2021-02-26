@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   resources :songs, only: [:index, :show]
 
   resources :albums do
-    resources :songs, only: [:new, :create, :index, :show, :edit]
+    resources :songs, only: [:new, :create, :index, :show, :edit, :destroy]
   end
 end

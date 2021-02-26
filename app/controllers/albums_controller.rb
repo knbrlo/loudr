@@ -41,6 +41,14 @@ class AlbumsController < ApplicationController
     end
 
     def edit
+        @album = Album.find_by_id(params[:id])
+        if !@album
+            redirect_to home_path
+        end
+    end
+
+    def destroy
+        puts 'destroy album'
     end
     
     private

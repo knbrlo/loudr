@@ -569,12 +569,12 @@ a:hover, a:visited, a:link, a:active {
 
 #album-show-container {
     background: red;
-    height: 103%;
+    height: 107%;
 }
 
 #album-show-container-header {
     margin-top: -39px;
-    margin-left: -20px;
+    margin-left: 0px;
     background: purple;
     height: 290px;
 }

@@ -124,8 +124,6 @@ a:hover, a:visited, a:link, a:active {
 #footer-container div a {
     color: white;
     text-decoration: none;
-    background: red;
-    margin-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 90%;

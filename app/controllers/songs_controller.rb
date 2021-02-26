@@ -36,7 +36,41 @@ class SongsController < ApplicationController
         end
     end
 
+    def edit
+        check_if_logged_in_creator
+        check_album_exists
+        check_song_exists
+        check_if_creator_owns_album
+    end
+
     private
+
+    def check_if_logged_in_creator
+        if !logged_in_creator?
+            redirect_to home_path
+        end
+    end
+
+    def check_album_exists
+        @album = Album.find_by_id(params[:album_id])
+        if !@album
+            redirect_to home_path
+        end
+    end
+
+    def check_song_exists
+        @song = Album.find_by_id(params[:id])
+        if !@album
+            redirect_to home_path
+        end
+    end
+    
+    def check_if_creator_owns_album
+        @album = Album.find_by_id(params[:album_id])
+        if @album.creator_id != session[:creator_id]
+            redirect_to home_path
+        end
+    end
 
     def song_params
         params.require(:song).permit(:name, :duration, :song_number, :explicit)

@@ -11,6 +11,7 @@
         
         <div class="album-show-container-song-item">
             <p><%= song.name %></p>
+            <%= link_to 'Edit Song', "/albums/#{@album.id}/songs/#{song.id}/edit" %>
         </div>
         <% end %>
         <% if logged_in_creator? %>

@@ -54,15 +54,15 @@ class AlbumsController < ApplicationController
         check_if_creator_owns_album(params[:id])
     end
 
-    def check_album_exists
-        @album = Album.find_by_id(params[:id])
-        if !@album
+    def check_if_logged_in_creator
+        if !logged_in_creator?
             redirect_to home_path
         end
     end
 
-    def check_if_logged_in_creator
-        if !logged_in_creator?
+    def check_album_exists
+        @album = Album.find_by_id(params[:id])
+        if !@album
             redirect_to home_path
         end
     end

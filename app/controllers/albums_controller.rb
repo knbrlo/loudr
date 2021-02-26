@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
     before_action :check_unauthenticated_redirect_needed, only: [:index, :show]
+    before_action :edit_destroy_checks, only: [:edit, :destroy]
 
     def index
         if params[:category].present?
@@ -34,24 +35,44 @@ class AlbumsController < ApplicationController
     end
 
     def show
-        @album = Album.find_by_id(params[:id])
-        if !@album
-            redirect_to home_path
-        end
+        check_album_exists
     end
 
     def edit
+    end
+
+    def destroy
+        @album.destroy
+        redirect_to albums_path
+    end
+    
+    private
+
+    def edit_destroy_checks
+        check_if_logged_in_creator
+        check_album_exists
+        check_if_creator_owns_album(params[:id])
+    end
+
+    def check_album_exists
         @album = Album.find_by_id(params[:id])
         if !@album
             redirect_to home_path
         end
     end
 
-    def destroy
-        puts 'destroy album'
+    def check_if_logged_in_creator
+        if !logged_in_creator?
+            redirect_to home_path
+        end
     end
-    
-    private
+
+    def check_if_creator_owns_album(album_id)
+        @album = Album.find_by_id(album_id)
+        if @album.creator_id != session[:creator_id]
+            redirect_to home_path
+        end
+    end
     
     def album_params
         params.require(:album).permit(:name, :category, :release_date, :released)

@@ -1,6 +1,9 @@
 <div id="album-show-container">
     <div id="album-show-container-header">
         <h3>Album Name: <%= @album.name %></h3>
+        <% if logged_in_creator? %>
+            <%= link_to 'Edit Album', "/albums/#{@album.id}/edit" %>
+        <% end %>
     </div>
     <div id="album-show-container-songs">
         <h4>All Songs</h4>

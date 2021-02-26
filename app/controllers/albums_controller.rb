@@ -39,8 +39,10 @@ class AlbumsController < ApplicationController
             redirect_to home_path
         end
     end
-    
 
+    def edit
+    end
+    
     private
     
     def album_params

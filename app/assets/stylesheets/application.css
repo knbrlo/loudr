@@ -136,7 +136,6 @@ a:hover, a:visited, a:link, a:active {
 .footer-container-item {
     width: 200px;
     height: 72%;
-    background: purple;
     margin-right: 80px;
     display: flex;
     flex-direction: column;

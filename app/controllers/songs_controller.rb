@@ -29,11 +29,15 @@ class SongsController < ApplicationController
 
     def create
         @album = Album.find_by_id(params[:album_id])
-        @song = @album.songs.build(song_params)
-        if @song.save
-            redirect_to album_path(@album)
+        if @album 
+            @song = @album.songs.build(song_params)
+            if @song.save
+                redirect_to album_path(@album)
+            else
+                render :new
+            end
         else
-            render :new
+            render :new 
         end
     end
 

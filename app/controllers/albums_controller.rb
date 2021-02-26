@@ -1,6 +1,8 @@
 class AlbumsController < ApplicationController
     before_action :check_unauthenticated_redirect_needed, only: [:index, :show]
-    before_action :edit_destroy_checks, only: [:edit, :destroy]
+    before_action :check_if_logged_in_creator, only: [:edit, :destroy]
+    before_action :check_album_exists, only: [:edit, :destroy]
+    before_action :check_if_creator_owns_album, only: [:edit, :destroy]
 
     def index
         if params[:category].present?
@@ -48,12 +50,6 @@ class AlbumsController < ApplicationController
     
     private
 
-    def edit_destroy_checks
-        check_if_logged_in_creator
-        check_album_exists
-        check_if_creator_owns_album(params[:id])
-    end
-
     def check_if_logged_in_creator
         if !logged_in_creator?
             redirect_to home_path
@@ -67,9 +63,13 @@ class AlbumsController < ApplicationController
         end
     end
 
-    def check_if_creator_owns_album(album_id)
-        @album = Album.find_by_id(album_id)
-        if @album.creator_id != session[:creator_id]
+    def check_if_creator_owns_album
+        @album = Album.find_by_id(params[:id])
+        if @album
+            if @album.creator_id != session[:creator_id]
+                redirect_to home_path
+            end
+        else    
             redirect_to home_path
         end
     end

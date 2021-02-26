@@ -18,6 +18,8 @@ single = Single.create([{name: 'Single 3', duration: '5:17', category: 'EDM', re
 album = Album.create([{name: 'Album 1', category: 'Rock', release_date: 'Dec 21, 2020', released: true, creator_id: 1}])
 album = Album.create([{name: 'Album 2', category: 'EDM', release_date: 'Jan 21, 2021', released: true, creator_id: 1}])
 album = Album.create([{name: 'Album 3', category: 'Classical', release_date: 'Feb 21, 2021', released: true, creator_id: 1}])
+album = Album.create([{name: 'Album 4', category: 'Classical', release_date: 'Feb 21, 2021', released: true, creator_id: 1}])
+album = Album.create([{name: 'Album 5', category: 'Classical', release_date: 'Feb 21, 2021', released: true, creator_id: 1}])
 
 # podcasts
 podcast = Podcast.create([{name: 'Podcast 1', description: 'Podcast 1 description', duration: '3:08', category: 'educational', released: true, release_date: 'Aug 1, 2020', play_count: 5, creator_id: 1}])

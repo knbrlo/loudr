@@ -5,7 +5,6 @@
     <div id="header-container-buttons">
         <% if logged_in_creator? || logged_in_user? %>
             <% if logged_in_creator? %>
-                <%= link_to 'Home', home_creator_path %>
                 <%= link_to "New Album", new_album_path %>       
                 <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'header-container-button'%>
             <% elsif logged_in_user? %>

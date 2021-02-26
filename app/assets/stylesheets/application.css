@@ -566,3 +566,15 @@ a:hover, a:visited, a:link, a:active {
 .podcasts-container-content-item:nth-child(10) {
     background: #23FAAF;
 }
+
+#album-show-container {
+    background: red;
+    height: 103%;
+}
+
+#album-show-container-header {
+    margin-top: -39px;
+    margin-left: -20px;
+    background: purple;
+    height: 290px;
+}

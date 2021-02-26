@@ -1,16 +1,17 @@
-<h1>Album Show Page</h1>
-<ul>
-    <li>Album Name: <%= @album.name %></li>
-    <li>Category: <%= @album.category %></li>
-    <li>Released: <%= @album.released %></li>
-    <li>Release Date: <%= @album.release_date %></li>
-</ul>
-<h2>Songs in This album</h2>
-<ul>
-    <% @album.songs.each do |song|%>
-        <li><%= song.name %></li>
-    <% end %>
-</ul>
-<% if logged_in_creator? %>
-    <%= link_to 'Add Song to Album', new_album_song_path(@album) %>
-<% end %>
+<div id="album-show-container">
+    <div id="album-show-container-header">
+        <h3>Album Name: <%= @album.name %></h3>
+    </div>
+    <div id="album-show-container-songs">
+        <h4>All Songs</h4>
+        <% @album.songs.each do |song|%>
+        
+        <div class="album-show-container-song-item">
+            <p><%= song.name %></p>
+        </div>
+        <% end %>
+        <% if logged_in_creator? %>
+            <%= link_to 'Add Song to Album', new_album_song_path(@album) %>
+        <% end %>
+    </div>
+</div>

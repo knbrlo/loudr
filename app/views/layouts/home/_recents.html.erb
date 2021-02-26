@@ -1,20 +1,15 @@
 <div id="recents-container" class="application-container-home-section">
     <h2>Recent Albums</h2>
     <div id="recents-container-content">
-        <div class="recents-container-content-item">
-            <div class="recents-container-content-item-info"></div>
-        </div>
-        <div class="recents-container-content-item">
-            <div class="recents-container-content-item-info"></div>
-        </div>
-        <div class="recents-container-content-item">
-            <div class="recents-container-content-item-info"></div>
-        </div>
-        <div class="recents-container-content-item">
-            <div class="recents-container-content-item-info"></div>
-        </div>
-        <div class="recents-container-content-item">
-            <div class="recents-container-content-item-info"></div>
-        </div>
+        <% object.each do |album| %>
+            <%= link_to album_path(album), :class => 'recents-container-content-item' do %>
+                <div>
+                    <div class="recents-container-content-item-info">
+                        <p><%= album.name %></p>
+                        <p>Songs <%= album.songs.count %></p>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
     </div>
 </div>

@@ -98,7 +98,7 @@ a:hover, a:visited, a:link, a:active {
     text-decoration: none;
     background: #4e84fe;
     margin-left: 34px;
-    padding-top: 13px;
+    padding-top: 10px;
     width: 120px;
     text-align: center;
     height: 39px;
@@ -380,4 +380,59 @@ a:hover, a:visited, a:link, a:active {
     margin-top: 0px;
     padding-top: 38px;
     width: 30%;
+}
+
+/* Home - Featured Artists */
+#featured-container {
+    width: 100%;
+}
+
+#featured-container-content {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.featured-container-content-item {
+    min-width: 270px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 3px #cccccc57;
+    -webkit-box-shadow: 0 0 3px #cccccc57;
+    box-shadow: 0 0 3px #cccccc57;
+    margin-right: 30px;
+}
+
+.featured-container-content-item img {
+    margin-left: 20px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    width: 72px;
+    height: 72px;
+    border-radius: 5px;
+    background: black;
+}
+
+.featured-container-content-item-text {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.featured-container-content-item-title {
+    margin-left: 20px;
+    height: 100%;
+    margin-top: 24px;
+}
+
+.featured-container-content-item-song-count {
+    margin-left: 20px;
+    height: 100%;
+    margin-top: 0px;
 }

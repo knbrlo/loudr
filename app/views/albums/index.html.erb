@@ -1,13 +1,3 @@
-<h1>Albums Page</h1>
-
-<ul>
-    <%= @albums.each do |album| %>
-        <li>Album Name: <%= album.name %></li>
-        <li>Category: <%= album.category %></li>
-        <li>Released: <%= album.released %></li>
-        <li>Release Date: <%= album.release_date %></li>
-    <% end %>
-</ul>
-
-
-
+<div id="albums-container">
+    <%= render partial: 'layouts/home/recents', locals: {object: @albums} %>
+</div>

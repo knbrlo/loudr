@@ -8,13 +8,24 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <%= render "layouts/header" %>
     <div id="application-container">
-      <%= yield %>
+      <% if authenticated_user_or_creator? %>
+        <%= render "layouts/navbar" %>
+      <% end %>
+      <div id="content-container">
+        <%= yield %>
+      </div>
     </div>
-    <%= render "layouts/footer" %>
-    <!-- TODO - Footer "For Artists" that has the "logged_in_creator" links -->
+    <% if authenticated_user_or_creator? %>
+      <%= render "layouts/player" %>
+    <% end %>
+    <% if !authenticated_user_or_creator? %>
+        <%= render "layouts/footer" %>
+    <% end %>  
   </body>
 </html>

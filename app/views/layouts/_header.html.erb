@@ -1,29 +1,23 @@
 <div id="header-container">
-<% if logged_in_creator? || logged_in_user? %>
-       <% if logged_in_creator? %>
-       <!-- TODO - make this float all the way to the left of the page so they can click on an icon to have it take them back to home. -->
-        <%= link_to 'Home', home_creator_path %>
-
-        <!-- TODO link to create new, link to my content, link to all creators, link to clips -->
-        
-        <%= link_to "New Album", new_album_path %>
-        <!-- TODO - Make a divider here for the studio operations -->
-        
-        <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'nav-item'%>
-    <% elsif logged_in_user? %>
-        <!-- TODO - make this float all the way to the left of the page so they can click on an icon to have it take them back to home. -->
-        <%= link_to 'Home', home_path %>
-        <%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-item'%>
-        <!-- TODO Link to home, link to creators list, link to favorites, link to following, link to playlists -->
-    <% end%>
-<% else %>
-    <% if for_creator_url? %>
-            <%= link_to "Get Access", signup_creator_path %>
-            <%= link_to "Log In", login_creator_path %>
-    <% else %>
-    <!-- TODO Link to home, link to creators list, link to favorites, link to following, link to playlists -->
-            <%= link_to "Sign Up", signup_path %>
-            <%= link_to "Log In", login_path %>
+    <%= link_to home_path do %>
+        <div id="header-container-logo"></div>
     <% end %>
-<% end %>
+    <div id="header-container-buttons">
+        <% if logged_in_creator? || logged_in_user? %>
+            <% if logged_in_creator? %>
+                <%= link_to "New Album", new_album_path %>       
+                <%= link_to 'Log Out', logout_creator_path, method: :delete, class: 'header-container-button'%>
+            <% elsif logged_in_user? %>
+                <%= link_to 'Log Out', logout_path, method: :delete, class: 'header-container-button' %>
+            <% end%>
+        <% else %>
+            <% if for_creator_url? %>
+                <%= link_to "Get Access", signup_creator_path %>
+                <%= link_to "Log In", login_creator_path %>
+            <% else %>
+                <%= link_to "Sign Up", signup_path, class: 'header-container-button' %>
+                <%= link_to "Log In", login_path, class: 'header-container-button' %>
+            <% end %>
+        <% end %>
+    </div>
 </div>

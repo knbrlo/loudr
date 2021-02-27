@@ -1,19 +1,23 @@
 class Album < ApplicationRecord
 
-    # relationships
     belongs_to :creator
     has_many :users
     has_many :songs
 
-    # validations
     validates :name, :category, presence: true
     validates :name, length: { maximum: 50 }
     validates :category, length: { maximum: 50 }
 
-    # scope methods
+    scope :released_albums, -> {where(released: true )}
     scope :edm_music, -> {where(category: "EDM")}
 
-
-    # todo - create a migration to store images for each album
-
+    def self.released_album_songs
+        @songs = []
+        self.where(released: true).each do |album|
+            album.songs.each do |song|
+                @songs << song
+            end
+        end
+        @songs
+    end
 end

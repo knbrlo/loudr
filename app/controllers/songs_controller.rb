@@ -1,63 +1,92 @@
 class SongsController < ApplicationController
-
-    # todo - assessment feedback
-    # todo - missing nested routes for songs 
-    # 11am 26th.
-    # todo - remove the comments so that I can speak about it without hints.
-    # make the code more DRY.
-    # todo - clear out puts statements.
-    # todo - this needs to look more like a finished product.
-    # todo - if i pass in an album that doesn't exist, fix that.
-    # todo - new branch, see if can combine the creator and user model. (extra) (bonus)
-    # todo - use more before actions in controllers.
-    # todo - redo the video (focus on the functionality)
-    # todo - nested and wrong nested routes (account, edit account etc.)
-    # todo - if foreign key doesn't exist, then handle changes.
-
+    before_action :edit_destroy_checks, only: [:edit, :destroy]
 
     def index
-        
-        # todo - if the route contains an album, then follow this path
-        @album = Album.find_by_id(params[:album_id])
+        if nested_album_url?
+            @album = Album.find_by_id(params[:album_id])
+            if @album 
+                @songs = @album.songs.all
+            else
+                redirect_to home_path
+            end
+        else
+            @songs = Album.released_album_songs
+        end
+    end
 
+    def show
+        redirect_to home_path
     end
 
     def new
-
-        @song = Song.new(album_id: params[:album_id])
-
-        # todo - get the highest song id from the album and pass it through to the form + 1
-        # todo - set a limit on the song number don't let them go lower than the current song id + 1
+        @album = Album.find_by_id(params[:album_id])
+        if @album
+            @song = Song.new(album_id: params[:album_id])
+        else
+            redirect_to home_path
+        end
     end
 
     def create
-        puts "make a new song for this album"
-        puts params[:album_id]
         @album = Album.find_by_id(params[:album_id])
-
-        puts "album is:"
-        puts @album
-
-        @song = @album.songs.build(song_params)
-
-        if @song.save
-            p 'New song is '
-            p @song
-
-            # todo - reroute back to the album show page and show all the songs for the album
-            redirect_to album_path(@album)
+        if @album 
+            @song = @album.songs.build(song_params)
+            if @song.save
+                redirect_to album_path(@album)
+            else
+                render :new
+            end
         else
-            p 'Didnt make new song'
-            # send the user back to the new song page
-            render :new
+            render :new 
         end
-        
+    end
+
+    def edit
+    end
+
+    def destroy
+        @song.destroy
+        redirect_to album_path(@album)
     end
 
     private
+    def edit_destroy_checks
+        check_if_logged_in_creator
+        @album = check_album_exists
+        @song = check_song_exists
+        check_if_creator_owns_album
+    end
+
+    def check_if_logged_in_creator
+        if !logged_in_creator?
+            redirect_to home_path
+        end
+    end
+
+    def check_album_exists
+        @album = Album.find_by_id(params[:album_id])
+        if !@album
+            redirect_to home_path
+        end
+        @album
+    end
+
+    def check_song_exists
+        @song = Song.find_by_id(params[:id])
+        if !@song
+            redirect_to home_path
+        end
+        @song
+    end
+    
+    def check_if_creator_owns_album
+        @album = Album.find_by_id(params[:album_id])
+        if @album.creator_id != session[:creator_id]
+            redirect_to home_path
+        end
+    end
 
     def song_params
         params.require(:song).permit(:name, :duration, :song_number, :explicit)
     end
-
 end

@@ -1,20 +1,11 @@
 <h1>Sign Up Form</h1>
-
-<!-- TODO - Handle Validation failed: Username has already been taken, Email has already been taken  and displaying the error here-->
-
 <%= form_for(@user) do |f| %>
     <%= render partial: 'layouts/errors', locals: {object: @user} %>
-
     <%= f.label :username %>
     <%= f.text_field :username %>
-
     <%= f.label :email %>
     <%= f.email_field :email %>
-
-    <!-- Make sure we don't use a password_digest here because it'll save the raw text password to the DB which is very bad -->
     <%= f.label :password %>
     <%= f.password_field :password %>
-
     <%= f.submit "Sign Up" %>
-
 <% end %>

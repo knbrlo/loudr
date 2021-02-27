@@ -1,5 +1,7 @@
-<h1>Logged In - Creator Home Page</h1>
-<%= render partial: 'layouts/content/singles', locals: {object: @singles} %>
-<%= render partial: 'layouts/content/albums', locals: {object: @albums} %>
-<%= render partial: 'layouts/content/podcasts', locals: {object: @podcasts} %>
-
+<%= render partial: 'layouts/home/recommended' %>
+<%= render partial: 'layouts/home/discover' %>
+<%= render partial: 'layouts/home/recents', locals: {object: @albums} %>
+<%= render partial: 'layouts/home/topsongs' %>
+<%= render partial: 'layouts/home/featuredartists' %>
+<%= render partial: 'layouts/home/topplaylists' %>
+<%= render partial: 'layouts/home/podcasts' %>

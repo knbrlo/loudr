@@ -1,25 +1,13 @@
 <h1>New Song Page</h1>
-
-<!-- TODO - Add a back button that takes you back to the album page-->
-
 <%= form_for @song, url: "/albums/#{@song.album_id}/songs" do |f| %>
     <%= render partial: 'layouts/errors', locals: {object: @song} %>
-
     <%= f.label :name %>
     <%= f.text_field :name %>
-
     <%= f.label :duration %>
     <%= f.text_field :duration %>
-
-    <!-- TODO Don't let them create the same song number twice, maybe prepopulate this.-->
     <%= f.label :song_number %>
     <%= f.number_field :song_number %>
-
     <%= f.label :explicit %>
     <%= f.check_box :explicit %>
-    
     <%= f.submit "Add Song to Album" %>
-
 <% end %>
-
-

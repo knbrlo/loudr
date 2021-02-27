@@ -1,18 +1,21 @@
-<h1>Song Index Page</h1>
-
-<!-- DRY FIX NEEDED -->
+<h1>Top Songs</h1>
+<% if !@album.nil? %>
 <ul>
     <li>Album Name: <%= @album.name %></li>
     <li>Category: <%= @album.category %></li>
     <li>Released: <%= @album.released %></li>
     <li>Release Date: <%= @album.release_date %></li>
 </ul>
-
 <h2>Songs in This album</h2>
 <ul>
     <% @album.songs.each do |song|%>
         <li><%= song.name %></li>
     <% end %>
 </ul>
-
-<!-- TODO: Link back to the album page -->
+<% elsif !@songs.nil? %>
+<ul>
+    <% @songs.each do |song| %>
+        <li><%= song.name %></li>
+    <% end %>
+</ul>
+<% end %>

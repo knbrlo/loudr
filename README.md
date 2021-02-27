@@ -35,14 +35,10 @@ Once signed up / logged in as a creator you'll be taken to the main page ```http
 
 -----
 ## Edit an Album 
-- TODO - Build this out
-
 Here on the edit page ```https://localhost:3000/album/:id/edit``` there are options to change the album name, category, released value and released date. If you make changes and save those changes you'll be taken to a album detail page, if you delete the album you'll be taken back to the album index page.
 
 -----
 ## Delete an Album
-- TODO - Build this out
-
 This is covered in the above text the controller will just handle the delete request after they've been authenticated one more time before processing the delete request.
 
 ---
@@ -52,22 +48,11 @@ When you're viewing an album detail page there is a button on the bottom of the 
 
 -----
 ## Edit your account
-- TODO - Build this out
-
 This page can be accessed anywhere throughout the app once you've logged in click the **Account** selection in the header or navigate to ```https://localhost:3000/users/:id/``` if you're a user and navigate to ```https://localhost:3000/creators/:id/``` if you're a creator. Here you'll see your current username and email and below there's a button "Edit Account" where you can change your username, password, email address or if you're done with the app you can delete your account from here.
 
 -----
 ## Delete your account
-- TODO - Build this out
-
 You can get to this page from the **Account** and then clicking on the **Edit Account** link or visit using the direct link which is ```https://localhost:3000/users/:id/edit```. Here you can make changes to username, email or password. Also if you'd like to delete your account you can by clicking the light grey text at the bottom of the form.
-
-
-- TODO - Add Recents
-- TODO - Add Podcasts
-- TODO - Add Favorites
-- TODO - Add Playlists
-- TODO - Add ability to play audio
 
 ---
 ## Closing the app

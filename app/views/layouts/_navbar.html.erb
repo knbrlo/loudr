@@ -1,0 +1,53 @@
+<div id="navbar-container">
+    <div id="navbar-container-main-menu" class="navbar-container-section">
+        <h4>Main Menu</h4>
+        <%= link_to home_path do %>
+            <div id="navbar-cotainer-selection-home" class="navbar-container-selection-item">
+                <p>Home</p>
+            </div>
+        <% end %>
+        <%= link_to songs_path do %>
+            <div class="navbar-container-selection-item">
+                <p>Songs</p>
+            </div>
+        <% end %>
+        <%= link_to albums_path do %>
+            <div class="navbar-container-selection-item">
+                <p>Albums</p>
+            </div>
+        <% end %>
+        <%= link_to creators_path do %>
+            <div class="navbar-container-selection-item">
+                <p>Creators</p>
+            </div>
+        <% end %>
+        <%= link_to singles_path do %>
+            <div class="navbar-container-selection-item">
+                <p>Singles</p>
+            </div>
+        <% end %>
+        <%= link_to podcasts_path do %>
+            <div class="navbar-container-selection-item">
+                <p>Podcasts</p>
+            </div>
+        <% end %>
+    </div>
+    <div id="navbar-container-yours" class="navbar-container-section">
+        <h4>Yours</h4>
+        <%= link_to podcasts_path do %>
+            <div class="navbar-container-selection-item">
+                <p>Favorites</p>
+            </div>
+        <% end %>
+        <%= link_to podcasts_path do %>
+            <div class="navbar-container-selection-item">
+                <p>Play History</p>
+            </div>
+        <% end %>
+        <%= link_to podcasts_path do %>
+            <div class="navbar-container-selection-item">
+                <p>Download Items</p>
+            </div>
+        <% end %>
+    </div>
+</div>

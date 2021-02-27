@@ -1,21 +1,6 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
 * {
     box-sizing: border-box;
+    font-family: 'Roboto'
 }
 
 *:before,
@@ -28,28 +13,71 @@ body {
     height: 100%;
     position: relative;
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 a:hover, a:visited, a:link, a:active {
     text-decoration: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 #application-container {
-    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    background: #f5f8ff;
     min-height: 100vh;
-    overflow: hidden;
-    display: block;
-    position: relative;
     padding-bottom: 100px;
 }
 
+#navbar-container {
+    background: white;
+    width: 240px;
+    padding-top: 80px;
+    position: fixed;
+    height: 100%;
+}
+
+#navbar-container h4 {
+    color: #5a5a8f;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navbar-container-selection-item {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 60px;
+}
+
+#navbar-cotainer-selection-home {
+    background: #f5f8ff;
+}
+
+.navbar-container-selection-item p {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#content-container {
+    margin-top: 80px;
+    padding-bottom: 0px;
+    margin-left: 260px;
+    width: 88%;
+}
+
 #header-container {
-    background: black;
+    background: white;
     color: white;
     display: flex;
     flex-direction: row;
-    height: 80px;
-    justify-content: flex-end;
+    height: 60px;
+    justify-content: space-between;
     padding-right: 20px;
     position: fixed;
     top: 0;
@@ -57,22 +85,37 @@ a:hover, a:visited, a:link, a:active {
     z-index: 1;
 }
 
-#header-container > a {
+#header-container-buttons {
+    width: 360px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.header-container-button {
     color: white;
     text-decoration: none;
-    background: red;
-    margin-left: 20px;
-    padding-top: 30px;
+    background: #4e84fe;
+    margin-left: 34px;
+    padding-top: 10px;
     width: 120px;
     text-align: center;
+    height: 39px;
+    border-radius: 25px;
+}
+
+#header-container-logo {
+    background:#4e84fe;
+    width: 240px;
+    height: 100%;
 }
 
 #footer-container {
-    background: black;
+    background: #04142b;
     color: white;
     display: flex;
     flex-direction: row;
-    height: 300px;
     width: 100%;
     justify-content: center;
     position: absolute;
@@ -81,8 +124,6 @@ a:hover, a:visited, a:link, a:active {
 #footer-container div a {
     color: white;
     text-decoration: none;
-    background: red;
-    margin-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 90%;
@@ -92,14 +133,18 @@ a:hover, a:visited, a:link, a:active {
 
 .footer-container-item {
     width: 200px;
-    height: 100%;
-    background: purple;
-    margin-left: 20px;
+    height: 72%;
+    margin-right: 80px;
     display: flex;
     flex-direction: column;
+    margin-top: 40px;
 }
 
-/* Application Styling */
+.footer-container-item p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 .content-container {
     display: flex;
     flex-direction: row;
@@ -107,6 +152,7 @@ a:hover, a:visited, a:link, a:active {
     height: 180px;
     align-items: center;
     padding-left: 40px;
+    overflow: hidden;
 }
 
 .content-container-item {
@@ -120,3 +166,410 @@ a:hover, a:visited, a:link, a:active {
     color: black;
 }
 
+#player-container {
+    background: #04142b;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+    height: 90px;
+    bottom: 0;
+}
+
+.application-container-home-section {
+    width: 100%;
+    min-height: 20px;
+    margin-bottom: 40px;
+}
+
+.application-container-home-section h2 {
+    color: #5a5a8f;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* Home - Recommended */
+#recommended-container {
+    width: 100%;
+}
+
+#recommended-container-content {
+    height: 260px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: inherit;
+    align-items: center;
+    overflow: scroll;
+}
+
+.recommended-container-content-item {
+    min-width: 400px;
+    height: 90%;
+    margin-right: 40px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 3px #cccccc57;
+    -webkit-box-shadow: 0 0 3px #cccccc57;
+    box-shadow: 0 0 3px #cccccc57;
+}
+
+.recommended-container-content-item:nth-child(1) {
+    background: #311279;
+}
+
+.recommended-container-content-item:nth-child(2) {
+    background: #dac296;
+}
+
+.recommended-container-content-item:nth-child(3) {
+    background: #335ad3;
+}
+.recommended-container-content-item:nth-child(4) {
+    background: #311279;
+}
+
+
+/* Home - Discover */
+#discover-container {
+    width: 100%;
+}
+
+#discover-container-content {
+    height: 160px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: inherit;
+    align-items: center;
+    overflow: scroll;
+}
+
+.discover-container-content-item {
+    min-width: 320px;
+    height: 90%;
+    margin-right: 40px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 3px #cccccc57;
+    -webkit-box-shadow: 0 0 3px #cccccc57;
+    box-shadow: 0 0 3px #cccccc57;
+}
+
+.discover-container-content-item:nth-child(1) {
+    background: #23dafa;
+}
+
+.discover-container-content-item:nth-child(2) {
+    background: #ff8c7e;
+}
+
+.discover-container-content-item:nth-child(3) {
+    background: #7579d6;
+}
+
+.discover-container-content-item:nth-child(4) {
+    background: #f484b3;
+}
+
+.discover-container-content-item:nth-child(5) {
+    background: #23FAAF;
+}
+
+/* Home - Recents */
+#recents-container {
+    width: 100%;
+}
+
+#recents-container-content {
+    height: 320px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: inherit;
+    align-items: center;
+    overflow: scroll;
+}
+
+.recents-container-content-item {
+    min-width: 320px;
+    height: 90%;
+    margin-right: 40px;
+    border-radius: 5px;
+    position: relative;
+    -moz-box-shadow: 0 0 3px #cccccc57;
+    -webkit-box-shadow: 0 0 3px #cccccc57;
+    box-shadow: 0 0 3px #cccccc57;
+}
+
+.recents-container-content-item:nth-child(1) {
+    background: #19297e;
+}
+
+.recents-container-content-item:nth-child(2) {
+    background: #b47b5f;
+}
+
+.recents-container-content-item:nth-child(3) {
+    background: #b25871;
+}
+
+.recents-container-content-item:nth-child(4) {
+    background: #cb3e47;
+}
+
+.recents-container-content-item:nth-child(5) {
+    background: #19297e;
+}
+
+.recents-container-content-item-info {
+    height: 106px;
+    width: 100%;
+    background: white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Home - Top Songs */
+#topsongs-container {
+    width: 100%;
+}
+
+#topsongs-container-content {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-flow: column wrap;
+}
+
+.topsongs-container-content-item {
+    width: 50%;
+    height: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.topsongs-container-content-item img {
+    margin-left: 30px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    width: 72px;
+    height: 72px;
+    border-radius: 5px;
+    background: black;
+}
+
+.topsongs-container-content-item-title {
+    margin-left: 70px;
+    height: 100%;
+    margin-top: 0px;
+    padding-top: 38px;
+    width: 30%;
+}
+
+.topsongs-container-content-item-duration {
+    margin-left: 70px;
+    height: 100%;
+    margin-top: 0px;
+    padding-top: 38px;
+    width: 30%;
+}
+
+/* Home - Featured Artists */
+#featured-container {
+    width: 100%;
+}
+
+#featured-container-content {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.featured-container-content-item {
+    min-width: 270px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 3px #cccccc57;
+    -webkit-box-shadow: 0 0 3px #cccccc57;
+    box-shadow: 0 0 3px #cccccc57;
+    margin-right: 30px;
+}
+
+.featured-container-content-item img {
+    margin-left: 20px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    width: 72px;
+    height: 72px;
+    border-radius: 5px;
+    background: black;
+}
+
+.featured-container-content-item-text {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.featured-container-content-item-title {
+    margin-left: 20px;
+    height: 100%;
+    margin-top: 24px;
+}
+
+.featured-container-content-item-song-count {
+    margin-left: 20px;
+    height: 100%;
+    margin-top: 0px;
+}
+
+/* Home - Top Playlists */
+#top-playlists-container {
+    width: 100%;
+}
+
+#top-playlists-container-content {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: inherit;
+    align-items: center;
+    overflow: scroll;
+}
+
+.top-playlists-container-content-item {
+    min-width: 160px;
+    height: 170px;
+    margin-right: 40px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 3px #cccccc57;
+    -webkit-box-shadow: 0 0 3px #cccccc57;
+    box-shadow: 0 0 3px #cccccc57;
+}
+
+.top-playlists-container-content-item:nth-child(1) {
+    background: #23dafa;
+}
+
+.top-playlists-container-content-item:nth-child(2) {
+    background: #ff8c7e;
+}
+
+.top-playlists-container-content-item:nth-child(3) {
+    background: #7579d6;
+}
+
+.top-playlists-container-content-item:nth-child(4) {
+    background: #f484b3;
+}
+
+.top-playlists-container-content-item:nth-child(5) {
+    background: #23FAAF;
+}
+
+.top-playlists-container-content-item:nth-child(6) {
+    background: #23dafa;
+}
+
+.top-playlists-container-content-item:nth-child(7) {
+    background: #ff8c7e;
+}
+
+.top-playlists-container-content-item:nth-child(8) {
+    background: #7579d6;
+}
+
+.top-playlists-container-content-item:nth-child(9) {
+    background: #f484b3;
+}
+
+.top-playlists-container-content-item:nth-child(10) {
+    background: #23FAAF;
+}
+
+/* Home - Podcasts */
+#podcasts-container {
+    width: 100%;
+}
+
+#podcasts-container-content {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: inherit;
+    align-items: center;
+    overflow: scroll;
+}
+
+.podcasts-container-content-item {
+    min-width: 160px;
+    height: 180px;
+    margin-right: 40px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 3px #cccccc57;
+    -webkit-box-shadow: 0 0 3px #cccccc57;
+    box-shadow: 0 0 3px #cccccc57;
+}
+
+.podcasts-container-content-item:nth-child(1) {
+    background: #23dafa;
+}
+
+.podcasts-container-content-item:nth-child(2) {
+    background: #ff8c7e;
+}
+
+.podcasts-container-content-item:nth-child(3) {
+    background: #7579d6;
+}
+
+.podcasts-container-content-item:nth-child(4) {
+    background: #f484b3;
+}
+
+.podcasts-container-content-item:nth-child(5) {
+    background: #23FAAF;
+}
+
+.podcasts-container-content-item:nth-child(6) {
+    background: #23dafa;
+}
+
+.podcasts-container-content-item:nth-child(7) {
+    background: #ff8c7e;
+}
+
+.podcasts-container-content-item:nth-child(8) {
+    background: #7579d6;
+}
+
+.podcasts-container-content-item:nth-child(9) {
+    background: #f484b3;
+}
+
+.podcasts-container-content-item:nth-child(10) {
+    background: #23FAAF;
+}
+
+#album-show-container {
+    height: 107%;
+}
+
+#album-show-container-header {
+    margin-top: -39px;
+    margin-left: 0px;
+    height: 290px;
+}
